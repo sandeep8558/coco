@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,9 +34,10 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
         return view('admin.dashboard');
     })->name('admin-dashboard');
 
-    Route::get('/admin/grades', function () {
-        return view('admin.grades');
-    })->name('admin-grades');
+    Route::get('/admin/grades', [GradeController::class, 'index']);
+    Route::post('/admin/grades/save', [GradeController::class, 'save']);
+    Route::post('/admin/grades/update', [GradeController::class, 'update']);
+    Route::post('/admin/grades/delete', [GradeController::class, 'delete']);
 
     Route::get('/admin/documents', function () {
         return view('admin.documents');
