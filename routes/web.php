@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('web.home');
 });
 
+Route::get('/admission', function () {
+    return view('web.admission');
+});
+
 Route::get('/dashboard', function () {
     if(Auth::user()->role == "Administrator"){
         return redirect('/admin/dashboard');
