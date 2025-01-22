@@ -1,5 +1,6 @@
-<div id="program" class="container text-center">
-    <h1>Our Program</h1>
+<div id="program" class="container text-center mt-5 py-5">
+
+    <h1 class="mb-5">Our Program</h1>
 
     <ul class="nav nav-pills mb-3 justify-content-center nav-fill" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">

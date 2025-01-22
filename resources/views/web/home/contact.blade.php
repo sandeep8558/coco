@@ -1,4 +1,4 @@
-  <div class="container py-3 py-md-5 py-xl-8">
+  <div id="contact" class="container py-3 py-md-5 py-xl-8">
     <div class="row justify-content-md-center">
       <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
         <h2 class="mb-4 display-5 text-center">Need Help</h2>
@@ -8,14 +8,14 @@
     </div>
   </div>
 
-  <div id="contact" class="container">
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="card border border-0 rounded shadow overflow-hidden">
           <div class="card-body p-0">
             <div class="row gy-3 gy-md-4 gy-lg-0">
               <!-- <div class="col-12 col-lg-6 bsb-overlay background-position-center background-size-cover" style="--bsb-overlay-opacity: 0.7; background-image: url('./img/4.png');"> -->
-              <div class="col-12 col-lg-6  background-position-center bg-success">
+              <div class="col-12 col-lg-6  background-position-center text-bg-quaternary">
                 <div class="row align-items-lg-center justify-content-center h-100">
                   <div class="col-11 col-xl-10">
                     <div class="contact-info-wrapper py-4 py-xl-5">
