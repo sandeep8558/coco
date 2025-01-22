@@ -5,4 +5,5 @@
 @endsection
 
 @section('content')
+<h1>New Admission Open</h1>
 @endsection
