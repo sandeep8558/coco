@@ -1,11 +1,3 @@
-.h-full {
-    height: 100vh !important;
-}
-
-.w-full {
-    width: 100vw !important;
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 20px;
@@ -26,4 +18,9 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #ffc107;
+    cursor: pointer;
+}
+
+.bg-none {
+    background-color: rgba(0, 0, 0, 0) !important;
 }
