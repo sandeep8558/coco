@@ -21,7 +21,6 @@ class Administrator
                 return $next($request);
             }
         }
-        Auth::logout();
-        return redirect('/');
+        return redirect('/dashboard');
     }
 }

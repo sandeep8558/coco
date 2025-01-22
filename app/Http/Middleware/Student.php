@@ -21,7 +21,6 @@ class Student
                 return $next($request);
             }
         }
-        Auth::logout();
-        return redirect('/');
+        return redirect('/dashboard');
     }
 }

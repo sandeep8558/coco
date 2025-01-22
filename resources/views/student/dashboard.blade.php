@@ -1,4 +1,4 @@
-@extends('layouts.student')
+@extends('layouts.web')
 
 @section('head')
 <title>Student</title>
