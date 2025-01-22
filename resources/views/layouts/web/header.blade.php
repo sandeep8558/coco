@@ -16,7 +16,7 @@
   <nav class="navbar navbar-expand-lg bg-primary py-2" data-bs-theme="light">
     <div class="container">
       
-      <a class="navbar-brand" href="/"><h3>Coco Preschool</h3></a>
+      <a class="navbar-brand" href="/"><h3 class="m-0 p-0">Coco Preschool</h3></a>
   
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,6 +45,23 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
+
+          @if(Auth::check())
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <a class="nav-link" href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">{{ __('Logout') }}</a>
+            </form>
+          </li>
+          @else
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          @endif
+
         </ul>
       </div>
     </div>

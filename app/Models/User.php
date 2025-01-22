@@ -45,4 +45,18 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function isAdministrator(){
+        if($this->role == 'Administrator' && $this->status == 'Active'){
+            return true;
+        }
+        return false;
+    }
+
+    public function isStudent(){
+        if($this->role == 'Student' && $this->status == 'Active'){
+            return true;
+        }
+        return false;
+    }
 }
