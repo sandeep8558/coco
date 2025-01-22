@@ -23,7 +23,7 @@
                       <p class="lead fs-4 text-light opacity-75 mb-4 mb-xxl-5">We're always on the lookout to work with new clients. If you're interested in working with us, please get in touch in one of the following ways.</p>
                       <div class="d-flex mb-4 mb-xxl-5">
                         <div class="me-4 text-primary">
-                         <i class="fa fa-solid fa-location-dot"></i>
+                        <i class="bi bi-geo-alt-fill"></i>
                          <!-- <i class="fa fa-map-marker"></i> -->
                         </div>
                         <div>
