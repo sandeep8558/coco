@@ -6,4 +6,5 @@
 
 @section('content')
 <h1>New Admission Open</h1>
+<h2>Leena</h2>
 @endsection
