@@ -18,31 +18,31 @@
                 <a class="btn btn-primary shadow d-block text-start" href="/dashboard">Dashboard</a>
             </li>
             <li class="list-group-item p-0 bg-none mb-2">
-                <a class="btn btn-primary shadow d-block text-start" href="/">Website</a>
+                <a class="btn btn-primary shadow d-block text-start" href="/admin/grades">Grades</a>
             </li>
             <li class="list-group-item p-0 bg-none mb-2">
-                <a class="btn btn-primary shadow d-block text-start" href="/dashboard">Grades</a>
+                <a class="btn btn-primary shadow d-block text-start" href="/admin/documents">Documents</a>
             </li>
             <li class="list-group-item p-0 bg-none mb-2">
-                <a class="btn btn-primary shadow d-block text-start" href="/dashboard">Documents</a>
+                <a class="btn btn-primary shadow d-block text-start" href="/admin/grade_wise_documents">Grade Wise Documents</a>
             </li>
             <li class="list-group-item p-0 bg-none mb-2">
-                <a class="btn btn-primary shadow d-block text-start" href="/dashboard">Grade Wise Documents</a>
+                <a class="btn btn-primary shadow d-block text-start" href="/admin/academic_year">Academic Year</a>
             </li>
             <li class="list-group-item p-0 bg-none mb-2">
-                <a class="btn btn-primary shadow d-block text-start" href="/dashboard">Academic Year</a>
+                <a class="btn btn-primary shadow d-block text-start" href="/admin/admission_notice">Admission Notice</a>
             </li>
             <li class="list-group-item p-0 bg-none mb-2">
-                <a class="btn btn-primary shadow d-block text-start" href="/dashboard">Admission Notice</a>
-            </li>
-            <li class="list-group-item p-0 bg-none mb-2">
-                <a class="btn btn-primary shadow d-block text-start" href="/dashboard">Application</a>
+                <a class="btn btn-primary shadow d-block text-start" href="/admin/application">Application</a>
             </li>
             <li class="list-group-item p-0 bg-none mb-2">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <a class="btn btn-primary shadow d-block text-start" href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">{{ __('Logout') }}</a>
                 </form>
+            </li>
+            <li class="list-group-item p-0 bg-none mb-2">
+                <a class="btn btn-primary shadow d-block text-start" href="/">Website</a>
             </li>
 
             

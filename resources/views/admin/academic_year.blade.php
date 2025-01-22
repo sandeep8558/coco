@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('head')
-<title>Admin Dashboard</title>
+<title>Academic Year</title>
 @endsection
 
 @section('content')
-<h1>Admin Dashboard</h1>
+<h1>Academic Year</h1>
 @endsection

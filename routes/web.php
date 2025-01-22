@@ -28,9 +28,35 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'admin', 'verified'])->group(function () {
+    
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin-dashboard');
+
+    Route::get('/admin/grades', function () {
+        return view('admin.grades');
+    })->name('admin-grades');
+
+    Route::get('/admin/documents', function () {
+        return view('admin.documents');
+    })->name('admin-documents');
+
+    Route::get('/admin/grade_wise_documents', function () {
+        return view('admin.grade_wise_documents');
+    })->name('admin-grade_wise_documents');
+
+    Route::get('/admin/academic_year', function () {
+        return view('admin.academic_year');
+    })->name('admin-academic_year');
+
+    Route::get('/admin/admission_notice', function () {
+        return view('admin.admission_notice');
+    })->name('admin-admission_notice');
+
+    Route::get('/admin/application', function () {
+        return view('admin.application');
+    })->name('admin-application');
+
 });
 
 Route::middleware(['auth', 'student', 'verified'])->group(function () {

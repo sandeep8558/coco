@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
 @section('head')
-<title>Admin Dashboard</title>
+<title>Grade Wise Documents</title>
 @endsection
 
 @section('content')
-<h1>Admin Dashboard</h1>
+<h1>Grade Wise Documents</h1>
 @endsection
