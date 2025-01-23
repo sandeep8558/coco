@@ -53,12 +53,13 @@
 <div>
     <form action="/admin/grade_wise_documents/update" method="post">
         @csrf
+        <input type="text" name="id" id="id" value="{{ $grade_wise_document->id }}">
         <select name="grade_id" id="grade_id">
             <option value="">Select Grade</option>
         @if(isset($grades))
             @foreach($grades as $gr)
-            <option selected="{!! (isset($grade_wise_document->grade_id) && $grade_wise_document->grade_id == $gr->id)?true:false !!}" value="{{$gr->id}}">
-                {{$gr->grade}}
+            <option {{ $grade_wise_document->grade_id == $gr->id ? 'selected' : '' }} value="{{$gr->id}}">
+                {{$gr->grade}} {{$grade_wise_document->grade_id}} {{$gr->id}}
             </option>
             @endforeach
         @endif
@@ -73,7 +74,7 @@
             <option value="">Select Document</option>
             @if(isset($documents))
                 @foreach($documents as $docu)
-                <option selected="{!! (isset($grade_wise_document->document_id) && $grade_wise_document->document_id == $docu->id)?true:false !!}" value="{{$docu->id}}">
+                <option {{ $grade_wise_document->document_id == $docu->id ? 'selected' : '' }} value="{{$docu->id}}">
                     {{$docu->document}}
 
                 </option>
