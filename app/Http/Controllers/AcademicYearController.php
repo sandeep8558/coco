@@ -3,34 +3,37 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\AcademicYearRequest;
 use App\Models\AcademicYear;
+
 
 class AcademicYearController extends Controller
 {
     //
     public function index(Request $request){
-        // $grade = null;
-        // if(isset($request->id)){
-        //     $grade = Grade::find($request->id);
-        // }
-        // $grades = Grade::simplePaginate(10);
-        // return view('admin.grades', compact('grades', 'grade'));
+
+        $academicyear = null;
+        if(isset($request->id)){
+            $academicyear = AcademicYear::find($request->id);
+        }
+        $academicyears = AcademicYear::simplePaginate(10);
+        return view('admin.academic_year', compact('academicyears', 'academicyear'));
     }
 
-    public function save(GradeRequest $request){
-        // Grade::create($request->all());
-        // return back();
+    public function save(AcademicYearRequest $request){
+        AcademicYear::create($request->all());
+        return back();
     }
 
-    public function update(GradeRequest $request){
-        // $grade = Grade::find($request->id);
-        // $grade->update($request->all());
-        // return redirect("/admin/grades");
+    public function update(AcademicYearRequest $request){
+        $academicyear = AcademicYear::find($request->id);
+        $academicyear->update($request->all());
+        return redirect("/admin/academic_year");
     }
 
     public function delete(Request $request){
-        // $grade = Grade::find($request->id);
-        // $grade->delete();
-        // return redirect("/admin/grades");
+        $academicyear = AcademicYear::find($request->id);
+        $academicyear->delete();
+        return redirect("/admin/academic_year");
     }
 }

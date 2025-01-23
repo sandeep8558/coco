@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('admission_notice_grade_seats', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('application_notice_id')->index();
+            $table->bigInteger('admission_notice_id')->index();
             $table->bigInteger('grade_id')->index();
             $table->integer('seats');
         });

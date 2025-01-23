@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\AcademicYearController;
+use App\Http\Controllers\AdmissionNoticeController;
 use App\Http\Controllers\GradeWiseDocumentController;
 use Illuminate\Support\Facades\Route;
 
@@ -54,11 +55,6 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     Route::post('/admin/grade_wise_documents/delete',[GradeWiseDocumentController::class,'delete']);
 
 
-    // Route::get('/admin/academic_year', function () {
-    //     return view('admin.academic_year');
-    // })->name('admin-academic_year');
-
-
     Route::get('/admin/academic_year',[AcademicYearController::class,'index']);
     Route::post('/admin/academic_year/save',[AcademicYearController::class,'save']);
     Route::post('/admin/academic_year/update',[AcademicYearController::class,'update']);
@@ -66,9 +62,19 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
 
 
 
-    Route::get('/admin/admission_notice', function () {
-        return view('admin.admission_notice');
-    })->name('admin-admission_notice');
+    // Route::get('/admin/admission_notice', function () {
+    //     return view('admin.admission_notice');
+    // })->name('admin-admission_notice');
+
+    Route::get('/admin/admission_notice',[AdmissionNoticeController::class,'index']);
+    Route::post('/admin/admission_notice/save',[AdmissionNoticeController::class,'save']);
+    Route::post('/admin/admission_notice/update',[AdmissionNoticeController::class,'update']);
+    Route::post('/admin/admission_notice/delete',[AdmissionNoticeController::class,'delete']);
+
+
+
+
+
 
     Route::get('/admin/application', function () {
         return view('admin.application');
