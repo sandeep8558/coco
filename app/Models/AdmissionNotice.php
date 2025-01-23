@@ -13,4 +13,8 @@ class AdmissionNotice extends Model
         "end_date",
         "application_fee",
     ];
+
+    public function admission_notice_grade_seats(){
+        return $this->hasMany(AdmissionNoticeGradeSeat::class);
+    }
 }

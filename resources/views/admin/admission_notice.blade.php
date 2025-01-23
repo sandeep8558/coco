@@ -52,7 +52,6 @@
         @endforeach
         @endif
         <br>
-
         @foreach($grades as $gr)
         <div>
           <input type="checkbox" name="grade_id[]" id="grade_id_{{$gr->id}}" value="{{$gr->id}}">
@@ -112,6 +111,30 @@
         {{ $err }}
         @endforeach
         @endif
+
+        <br>
+        @foreach($grades as $gr)
+            <?php $is = false; ?>
+            @foreach($admission_notice->admission_notice_grade_seats as $angs)
+                @if($angs->grade_id == $gr->id)
+                    <?php $is = true; ?>
+                    <div>
+                        <input type="checkbox" name="grade_id[]" id="grade_id_{{$gr->id}}" value="{{$gr->id}}" checked>
+                        <label for="grade_id_{{$gr->id}}"> {{$gr->grade}} - {{$gr->id}} </label>
+                        <input type="text" name="seats[]" id="seats" value="{{$angs->seats}}">
+                    </div>
+                @endif
+            @endforeach
+            @if(!$is)
+                <div>
+                    <input type="checkbox" name="grade_id[]" id="grade_id_{{$gr->id}}" value="{{$gr->id}}">
+                    <label for="grade_id_{{$gr->id}}"> {{$gr->grade}} </label>
+                    <input type="text" name="seats[]" id="seats">
+                </div>
+            @endif
+        @endforeach
+        <br>
+
         <input type="submit" value="Save Admission Notice">
     </form>
 
