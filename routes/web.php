@@ -16,6 +16,33 @@ Route::get('/admission', function () {
     return view('web.admission');
 });
 
+Route::get('/web/home/about', function () {
+    return view('web.home.about');
+})->name('about');
+
+Route::get('/web/home/contact', function () {
+    return view('web.home.contact');
+})->name('contact');
+
+Route::get('/web/home/facilities', function () {
+    return view('web.home.facilities');
+})->name('facilities');
+
+Route::get('/web/home/program', function () {
+    return view('web.home.program');
+})->name('program');
+
+Route::get('/web/home/gallery', function () {
+    return view('web.home.gallery');
+})->name('gallery');
+
+Route::get('/web/home/contact', function () {
+    return view('web.home.contact');
+})->name('contact');
+
+
+
+
 Route::get('/dashboard', function () {
     if(Auth::user()->role == "Administrator"){
         return redirect('/admin/dashboard');
