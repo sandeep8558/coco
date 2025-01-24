@@ -11,13 +11,16 @@
 <div>
     <form action="/admin/grades/save" method="post">
         @csrf
-        <input type="text" name="grade" id="grade">
-        @if($errors->get('grade'))
-        @foreach($errors->get('grade') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
-        <input type="submit" value="Save Grade">
+        <div class="form-floating">
+            <input type="text" class="form-control" name="grade" id="grade">
+            <label for="grade">Enter Grade</label> 
+            @if($errors->get('grade'))
+            @foreach($errors->get('grade') as $err)
+            {{ $err }}
+            @endforeach
+            @endif
+            <input type="submit" class="btn btn-primary" value="Save Grade">
+        </div>        
     </form>
 </div>
 @endif
@@ -26,14 +29,14 @@
 <div>
     <form action="/admin/grades/update" method="post">
         @csrf
-        <input type="text" name="id" id="id" value="{{ $grade->id }}">
+        <input type="text" name="id" id="id" value="{{ $grade->id }}">    
         <input type="text" name="grade" id="grade" value="{{ $grade->grade }}">
         @if($errors->get('grade'))
         @foreach($errors->get('grade') as $err)
         {{ $err }}
         @endforeach
         @endif
-        <input type="submit" value="Update Grade">
+        <input type="submit" class="btn" value="Update Grade">
     </form>
     <form action="/admin/grades/delete" method="post">
         @csrf

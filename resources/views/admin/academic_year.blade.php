@@ -35,7 +35,7 @@
         {{ $err }}
         @endforeach
         @endif
-        <input type="submit" value="Save Academic Year">
+        <input type="submit" class="btn btn-primary" value="Save Academic Year">
        
 
  </form>

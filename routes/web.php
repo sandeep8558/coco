@@ -47,7 +47,9 @@ Route::get('/contact', function () {
     return view('web.home.contact');
 })->name('contact');
 
-
+Route::get('/web/home/try', function () {
+    return view('web.home.try');
+})->name('try');
 
 
 Route::get('/dashboard', function () {
