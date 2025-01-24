@@ -44,11 +44,11 @@
 </div>
 
 
-  <div class="container border mb-0 shadow">
+  <div class="container mb-0 p-0 shadow">
     <div class="row">
       <div class="col-12">
-        <div class="card border border-0 rounded  overflow-hidden">
-          <div class="card-body p-0">
+        <div class="card border border-0 rounded p-0 overflow-hidden">
+          <div class="card-body ">
             <div class="row gy-3  gy-lg-0">
               <!-- <div class="col-12 col-lg-6 bsb-overlay background-position-center background-size-cover" style="--bsb-overlay-opacity: 0.7; background-image: url('./img/4.png');"> -->
               <div class="col-12 col-lg-6  background-position-center text-bg-quaternary">

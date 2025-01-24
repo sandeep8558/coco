@@ -17,4 +17,8 @@ class AdmissionNotice extends Model
     public function admission_notice_grade_seats(){
         return $this->hasMany(AdmissionNoticeGradeSeat::class);
     }
+
+    public function academic_year(){
+        return $this->belongsTo(AcademicYear::class);
+    }
 }

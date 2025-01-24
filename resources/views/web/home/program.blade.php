@@ -46,10 +46,10 @@
                 This is some placeholder content the Home tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.
                 </p> -->
                 <ul class="">
-                    <li>Why</li>
-                    <li>are</li>
-                    <li>there</li>
-                    <li>no</li>
+                    <li>This is some placeholder content the Home tab's associated</li>
+                    <li>This is some placeholder content the Home tab's associated</li>
+                    <li>This is some placeholder content the Home tab's associated</li>
+                    <li>This is some placeholder content the Home tab's associated</li>
                 </ul>
                   
                 </div>
