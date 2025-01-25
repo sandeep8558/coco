@@ -333,6 +333,21 @@
                     </div>
             </div>
 
+            <div class="col-12 col-xl-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="grade" name="grade" value="{{ old('grade') }}">
+                        <label for="grade">Grade</label>
+                    </div>
+            </div>
+
+            <div class="col-12 col-xl-3">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="grade" name="grade" value="{{ old('grade') }}">
+                        <label for="grade">Grade</label>
+                    </div>
+            </div>
+            
+
         </div>
     </div>
 </div>
