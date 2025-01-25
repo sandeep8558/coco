@@ -23,27 +23,27 @@ Route::get('/online_application/{id}', function ($id) {
     return view('web.online_application');
 });
 
-Route::get('/web/home/about', function () {
+Route::get('/about', function () {
     return view('web.home.about');
 })->name('about');
 
-Route::get('/web/home/contact', function () {
+Route::get('/contact', function () {
     return view('web.home.contact');
 })->name('contact');
 
-Route::get('/web/home/facilities', function () {
+Route::get('/facilities', function () {
     return view('web.home.facilities');
 })->name('facilities');
 
-Route::get('/web/home/program', function () {
+Route::get('/program', function () {
     return view('web.home.program');
 })->name('program');
 
-Route::get('/web/home/gallery', function () {
+Route::get('/gallery', function () {
     return view('web.home.gallery');
 })->name('gallery');
 
-Route::get('/web/home/contact', function () {
+Route::get('/contact', function () {
     return view('web.home.contact');
 })->name('contact');
 
