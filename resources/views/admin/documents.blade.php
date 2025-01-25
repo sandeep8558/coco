@@ -11,13 +11,17 @@
 <div>
     <form action="/admin/documents/save" method="post">
         @csrf
-        <input type="text" name="document" id="document">
-        @if($errors->get('document'))
-        @foreach($errors->get('document') as $err)
-        {{$err}}
-        @endforeach
-        @endif
-        <input type="submit" value="Save Document">
+        <div class="form-floating">
+            <input type="text" class="form-control" name="document" id="document">
+            <label for="document">Enter Document Name</label> 
+            @if($errors->get('document'))
+            @foreach($errors->get('document') as $err)
+            {{$err}}
+            @endforeach
+            @endif
+            <input type="submit" class="btn btn-primary" value="Save Document">
+        </div>
+        
     </form>
 </div>
 @endif

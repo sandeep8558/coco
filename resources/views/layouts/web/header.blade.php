@@ -25,25 +25,28 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="{{route('about')}}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#facilities">Facilities</a>
+            <a class="nav-link" href="{{route('facilities')}}">Facilities</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#program">Our Program</a>
+            <a class="nav-link" href="{{route('program')}}">Our Program</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#gallery">Gallery</a>
+            <a class="nav-link" href="{{route('gallery')}}">Gallery</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/admission">Admission</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link" href="{{route('contact')}}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('try')}}">try</a>
           </li>
 
           @if(Auth::check())

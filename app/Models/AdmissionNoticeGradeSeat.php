@@ -11,4 +11,8 @@ class AdmissionNoticeGradeSeat extends Model
         "grade_id",
         "seats",
     ];
+
+    public function grade(){
+        return $this->belongsTo(Grade::class);
+    }
 }

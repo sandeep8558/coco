@@ -6,6 +6,7 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\AdmissionNoticeController;
 use App\Http\Controllers\GradeWiseDocumentController;
+use App\Models\AdmissionNotice;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,8 +14,43 @@ Route::get('/', function () {
 });
 
 Route::get('/admission', function () {
-    return view('web.admission');
+    $today = date('Y-m-d');
+    $admission_notices = AdmissionNotice::where('end_date', '>=', $today)->get();
+    return view('web.admission', compact('admission_notices'));
 });
+
+Route::get('/online_application/{id}', function ($id) {
+    return view('web.online_application');
+});
+
+Route::get('/about', function () {
+    return view('web.home.about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('web.home.contact');
+})->name('contact');
+
+Route::get('/facilities', function () {
+    return view('web.home.facilities');
+})->name('facilities');
+
+Route::get('/program', function () {
+    return view('web.home.program');
+})->name('program');
+
+Route::get('/gallery', function () {
+    return view('web.home.gallery');
+})->name('gallery');
+
+Route::get('/contact', function () {
+    return view('web.home.contact');
+})->name('contact');
+
+Route::get('/web/home/try', function () {
+    return view('web.home.try');
+})->name('try');
+
 
 Route::get('/dashboard', function () {
     if(Auth::user()->role == "Administrator"){
