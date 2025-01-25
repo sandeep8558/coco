@@ -9,42 +9,49 @@
 
 @if(!isset($grade_wise_document))
 <div class="">
-
     <form action="/admin/grade_wise_documents/save" method="post">
         @csrf
-        <select name="grade_id" id="grade_id">
-            <option value="">Select Grade</option>
-        @if(isset($grades))
-            @foreach($grades as $gr)
-            <option value="{{$gr->id}}">
-                {{$gr->grade}}
-            </option>
-            @endforeach
-        @endif
-        </select>
-        @if($errors->get('grade_id'))
-        @foreach($errors->get('grade_id') as $err)
-        {{$err}}
-        @endforeach
-        @endif
-
-        <select name="document_id" id="document_id">
-            <option value="">Select Document</option>
-            @if(isset($documents))
-                @foreach($documents as $docu)
-                <option value="{{$docu->id}}">
-                    {{$docu->document}}
-                </option>
+    
+        <div class="form-floating">
+                <select name="grade_id" class="form-control" id="grade_id">
+                    <option value="">Select Grade</option>
+                @if(isset($grades))
+                    @foreach($grades as $gr)
+                    <option value="{{$gr->id}}">
+                        {{$gr->grade}}
+                    </option>
+                    @endforeach
+                @endif
+                </select>
+                <label for="grade_id">Select Grade</label> 
+                @if($errors->get('grade_id'))
+                @foreach($errors->get('grade_id') as $err)
+                {{$err}}
                 @endforeach
-            @endif
-        </select>
+                @endif
         
-        @if($errors->get('document_id'))
-        @foreach($errors->get('document_id') as $err)
-        {{$err}}
-        @endforeach
-        @endif
-        <input type="submit" value="Save Gradewise Documents">
+        </div>
+     
+        <div class="form-floating">
+            <select name="document_id" class="form-control" id="document_id">
+                <option value="">Select Document</option>
+                @if(isset($documents))
+                    @foreach($documents as $docu)
+                    <option value="{{$docu->id}}">
+                        {{$docu->document}}
+                    </option>
+                    @endforeach
+                @endif
+            </select>
+            <label for="document_id">Select Document</label> 
+            @if($errors->get('document_id'))
+            @foreach($errors->get('document_id') as $err)
+            {{$err}}
+            @endforeach
+            @endif
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Save Gradewise Documents">
     </form>
 </div>
 @endif

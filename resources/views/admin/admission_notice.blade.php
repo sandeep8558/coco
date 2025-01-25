@@ -61,7 +61,7 @@
         @endforeach
         <br>
         
-        <input type="submit" value="Save Admission Notice">
+        <input type="submit" class="btn btn-primary" value="Save Admission Notice">
     </form>
 </div>
 @endif
