@@ -6,12 +6,21 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\AdmissionNoticeController;
 use App\Http\Controllers\GradeWiseDocumentController;
+use App\Http\Controllers\AdmissionFormController;
+use App\Http\Controllers\StorageController;
+use App\Http\Controllers\PaymentController;
 use App\Models\AdmissionNotice;
 use Illuminate\Support\Facades\Route;
+
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('web.home');
 });
+
+Route::get('/payment', [PaymentController::class, 'index']);
+Route::post('/payment/request', [PaymentController::class, 'purchaseSubscription']);
+Route::post('/payment/response', [PaymentController::class, 'ccResponse']);
 
 Route::get('/admission', function () {
     $today = date('Y-m-d');
@@ -19,9 +28,16 @@ Route::get('/admission', function () {
     return view('web.admission', compact('admission_notices'));
 });
 
+Route::get('/try', function () {
+    return view('web.try');
+})->name('try');
+
 Route::get('/online_application/{id}', function ($id) {
     return view('web.online_application');
 });
+
+Route::get('/online_application/{id}', [AdmissionFormController::class, 'index']);
+Route::post('/online_application/{id}/save', [AdmissionFormController::class, 'save']);
 
 Route::get('/about', function () {
     return view('web.home.about');
@@ -46,10 +62,6 @@ Route::get('/gallery', function () {
 Route::get('/contact', function () {
     return view('web.home.contact');
 })->name('contact');
-
-Route::get('/web/home/try', function () {
-    return view('web.home.try');
-})->name('try');
 
 
 Route::get('/dashboard', function () {

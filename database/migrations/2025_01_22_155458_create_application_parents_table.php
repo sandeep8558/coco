@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->bigInteger('application_id')->index();
-            $table->set('relation', ['Father', 'Mother', 'Gardian']);
+            $table->set('relation', ['Father', 'Mother', 'Guardian']);
             $table->string('name');
             $table->string('age');
             $table->string('nationality');

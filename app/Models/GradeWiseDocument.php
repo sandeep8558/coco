@@ -10,4 +10,12 @@ class GradeWiseDocument extends Model
         "grade_id",
         "document_id",
     ];
+
+    public function grade(){
+        return $this->belongsTo(Grade::class);
+    }
+
+    public function document(){
+        return $this->belongsTo(Document::class);
+    }
 }
