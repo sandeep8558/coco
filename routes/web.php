@@ -28,10 +28,6 @@ Route::get('/admission', function () {
     return view('web.admission', compact('admission_notices'));
 });
 
-Route::get('/try', function () {
-    return view('web.try');
-})->name('try');
-
 Route::get('/online_application/{id}', function ($id) {
     return view('web.online_application');
 });

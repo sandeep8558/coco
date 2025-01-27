@@ -45,9 +45,6 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('contact')}}">Contact</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('try')}}">try</a>
-          </li>
 
           @if(Auth::check())
           <li class="nav-item">
