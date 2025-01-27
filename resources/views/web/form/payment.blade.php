@@ -21,10 +21,6 @@
                 <td><input type="text" name="tid" id="tid" readonly /></td>
             </tr>
             <tr>
-                <td>Merchant Id :</td>
-                <td><input type="text" name="merchant_id" value="4094602" /></td>
-            </tr>
-            <tr>
                 <td>Order Id :</td>
                 <td><input type="text" name="order_id" value="123654789" /></td>
             </tr>
@@ -32,25 +28,6 @@
                 <td>Amount :</td>
                 <td><input type="text" name="amount" value="1.00" /></td>
             </tr>
-            <tr>
-                <td>Currency :</td>
-                <td><input type="text" name="currency" value="INR" /></td>
-            </tr>
-            <tr>
-                <td>Redirect URL :</td>
-                <td><input type="text" name="redirect_url"
-                        value="https://cocoschool.in/payment/response" /></td>
-            </tr>
-            <tr>
-                <td>Cancel URL :</td>
-                <td><input type="text" name="cancel_url"
-                        value="https://cocoschool.in/payment/response" /></td>
-            </tr>
-            <tr>
-                <td>Language :</td>
-                <td><input type="text" name="language" value="EN" /></td>
-            </tr>
-
             <tr>
                 <td></td>
                 <td><INPUT TYPE="submit" value="CheckOut"></td>

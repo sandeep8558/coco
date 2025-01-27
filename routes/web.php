@@ -19,8 +19,13 @@ Route::get('/', function () {
 });
 
 Route::get('/payment', [PaymentController::class, 'index']);
-Route::post('/payment/request', [PaymentController::class, 'purchaseSubscription']);
-Route::post('/payment/response', [PaymentController::class, 'ccResponse']);
+Route::post('/payment/request', [PaymentController::class, 'paymentRequest']);
+Route::post('/payment/response', [PaymentController::class, 'paymentResponse']);
+
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('optimize:clear');
+    // return what you want
+});
 
 Route::get('/admission', function () {
     $today = date('Y-m-d');

@@ -7,49 +7,55 @@ use Illuminate\Support\Facades\Http;
 
 class PaymentController extends Controller
 {
+    private $merchantID;
+    private $AccessCode;
+    private $WorkingKey;
+
+    public function __construct(){
+        $this->merchantID = "4094602";
+        $this->AccessCode = "ATNI48MA81BX62INXB";
+        $this->WorkingKey = "2E41E11BF34B3B562B2DBD21D2CEE791";
+    }
+
     public function index(){
         return view('web.form.payment');
     }
 
-    public function purchaseSubscription(Request $request)
+    public function paymentRequest(Request $request)
     {
         $input = $request->all();
 
-        $input['amount'] = 100;
-        $input['order_id'] = "123XSDDD456";
         $input['currency'] = "INR";
-        $input['redirect_url'] = "/payment/response";
-        $input['cancel_url'] = "/payment/response";
+        $input['redirect_url'] = "https://cocoschool.in/payment/response";
+        $input['cancel_url'] = "https://cocoschool.in/payment/response";
         $input['language'] = "EN";
-        $input['merchant_id'] = "4094602";
+        $input['merchant_id'] = $this->merchantID;
 
         $merchant_data = "";
-
-        $working_key = config('1C151000A00D154E7B8B38767229170A'); //Shared by CCAVENUES
-        $access_code = config('AVNI48MA81BX62INXB'); //Shared by CCAVENUES
 
         foreach ($input as $key => $value) {
             $merchant_data .= $key . '=' . $value . '&';
         }
 
-        $encrypted_data = $this->encryptCC($merchant_data, $working_key);
-        $url = 'https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction&encRequest=' . $encrypted_data . '&access_code=' . $access_code;
+        $encrypted_data = $this->encryptCC($merchant_data, $this->WorkingKey);
+        $url = 'https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction&encRequest=' . $encrypted_data . '&access_code=' . $this->AccessCode;
 
         return redirect($url);
     }
 
-    public function ccResponse(Request $request)
+    public function paymentResp(Request $request)
     {
-        try {
-            $workingKey = config('cc-avenue.working_key'); //Working Key should be provided here.
-            $encResponse = $_POST["encResp"];
+        // return $request;
+        // try {
+        //     /* $encResponse = $_POST["encResp"];
+        //     $rcvdString = $this->decryptCC($encResponse, $this->WorkingKey);
+        //     $order_status = "";
+        //     $decryptValues = explode('&', $rcvdString);
+        //     $dataSize = sizeof($decryptValues);
 
-            $rcvdString = $this->decryptCC($encResponse, $workingKey);        //Crypto Decryption used as per the specified working key.
-            $order_status = "";
-            $decryptValues = explode('&', $rcvdString);
-            $dataSize = sizeof($decryptValues);
-        } 
-        catch(Exception $e){}
+        //     return redirect("/payment/result?data=".$rcvdString); */
+        // } 
+        // catch(Exception $e){}
     }
 
     public function encryptCC($plainText, $key)
