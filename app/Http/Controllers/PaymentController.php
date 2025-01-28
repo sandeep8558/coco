@@ -43,7 +43,7 @@ class PaymentController extends Controller
         return redirect($url);
     }
 
-    public function paymentResp(Request $request)
+    public function paymentResponse(Request $request)
     {
         // return $request;
         // try {
