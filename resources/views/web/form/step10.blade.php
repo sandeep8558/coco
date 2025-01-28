@@ -11,5 +11,20 @@
         </div>
         @endforeach
 
+        @if(session()->has('fileError'))
+        <div>{{ session()->get('fileError') }}</div>
+        @endif
+
+        <div class="row g-3 py-3">
+
+        @foreach($docs as $i => $doc)
+        <div class="col-12">
+            {{ $doc->document->document }}
+            
+        </div>
+        @endforeach
+
+    </div>
+
     </div>
 </div>

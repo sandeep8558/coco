@@ -14,4 +14,8 @@ class ApplicationSibling extends Model
         "school_college",
         "grade",
     ];
+
+    public function application(){
+        return $this->belongsTo(Application::class);
+    }
 }

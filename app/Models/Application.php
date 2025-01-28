@@ -34,4 +34,20 @@ class Application extends Model
         "no_of_brothers",
         "no_of_sisters",
     ];
+
+    public function grade(){
+        return $this->belongsTo(Grade::class);
+    }
+
+    public function application_documents(){
+        return $this->hasMany(ApplicationDocument::class);
+    }
+
+    public function application_parents(){
+        return $this->hasMany(ApplicationParent::class);
+    }
+
+    public function application_siblings(){
+        return $this->hasMany(ApplicationSibling::class);
+    }
 }

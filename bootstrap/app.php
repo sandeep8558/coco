@@ -15,6 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->appendToGroup('admin', Administrator::class);
         $middleware->appendToGroup('student', Student::class);
+        $middleware->validateCsrfTokens(except: [
+            '/payment/response',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

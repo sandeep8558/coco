@@ -1,5 +1,5 @@
 <div class="container">
 
-    
-    Payment Gateway
+    Application Fee is Rs: {{ $admission_notice->application_fee }}/- Only
+
 </div>

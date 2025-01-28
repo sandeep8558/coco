@@ -7,6 +7,7 @@ use App\Models\AdmissionNotice;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
 use App\Models\GradeWiseDocument;
+use Illuminate\Support\Facades\Storage;
 use Auth;
 
 class AdmissionFormController extends Controller
@@ -143,6 +144,9 @@ class AdmissionFormController extends Controller
         }
 
         if($step == 9){
+
+            //return $request;
+
             $step8Validator = $this->validateStep8($request);
             if ($step8Validator->fails()){
                 return redirect($path."?step=8")->withErrors($step8Validator)->withInput();
@@ -159,15 +163,44 @@ class AdmissionFormController extends Controller
         }
 
         if($step == 11){
-            $paths = [];
-            foreach($request->docs as $index => $doc){
-                $paths[] = $doc->store('documents', 'documents');
+
+            if(isset($request->docs)){
+
+                if(sizeof($request->document_id) == sizeof($request->docs)){
+
+                    $paths = [];
+                    foreach($request->docs as $index => $doc){
+                        if(is_object($request->docs[$index])){
+                            $paths[] = $doc->store('documents', 'documents');
+                        } else {
+                            $paths[] = "Sandeep".$index;
+                        }
+                    }
+
+                    if(session()->has('paths')){
+                        if(sizeof(session()->get('paths')) > 0){
+                            foreach(session()->get('paths') as $p){
+                                Storage::disk('documents')->delete($p);
+                            }
+                        }
+                    }
+
+                    session([
+                        "paths" => $paths,
+                        "document_id" => $request->document_id,
+                    ]);
+    
+                    return redirect($path."?step=11");
+                    
+                }
+
             }
-            session([
-                "paths" => $paths,
-                "document_id" => $request->document_id,
-            ]);
-            return redirect($path."?step=11");
+
+            $request->session()->flash('fileError', 'Please Select Files!');
+
+            return redirect($path."?step=10");
+            
+            
         }
 
         if($step == 12){

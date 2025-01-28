@@ -20,4 +20,8 @@ class ApplicationParent extends Model
         "office_address",
         "contact_number",
     ];
+
+    public function application(){
+        return $this->belongsTo(Application::class);
+    }
 }

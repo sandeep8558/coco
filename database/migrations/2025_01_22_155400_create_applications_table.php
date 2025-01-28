@@ -26,8 +26,8 @@ return new class extends Migration
             $table->string('birth_district');
             $table->string('birth_state');
             $table->string('religion');
-            $table->string('caste');
-            $table->string('sub_caste');
+            $table->string('caste')->nullable();
+            $table->string('sub_caste')->nullable();
             $table->set('gender', ['Male', 'Female', 'Other']);
             $table->string('aadhar_number');
             $table->string('mother_tongue');
@@ -41,6 +41,10 @@ return new class extends Migration
             $table->string('pincode');
             $table->integer('no_of_brothers');
             $table->integer('no_of_sisters');
+
+            $table->string('tracking_id')->nullable();
+            $table->string('bank_ref_no')->nullable();
+            $table->string('order_status')->nullable();
             
         });
     }

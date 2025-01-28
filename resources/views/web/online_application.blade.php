@@ -120,22 +120,23 @@
 
                 }
             ?>
+            @if($step < 12)
             <a class="btn btn-voilet" href="/online_application/{{$id}}?step={{ $prev }}">Previous {{$step-1}}</a>
             @endif
-    
-            <!-- @if($step > 1)
-            <a class="btn btn-voilet" href="/{{ $path }}?step={{ $step-1 }}">Previous</a>
             @endif
-    
-            @if($step < 5)
-            <a class="btn btn-voilet" href="/{{ $path }}?step={{ $step+1 }}">Next</a>
-            @endif -->
 
+            @if($step < 12)
             <input class="btn btn-voilet" type="submit" value="Next">
+            @endif
 
         </form>
 
-        @include ('web.form.payment')
+        
+
+        @if($step == 12)
+            <a class="btn btn-voilet" href="/online_application/{{$id}}?step={{ $prev }}">Previous {{$step-1}}</a>
+            @include('web.form.payment')
+        @endif
 
 
     </div>

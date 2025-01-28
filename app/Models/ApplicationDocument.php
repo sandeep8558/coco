@@ -11,4 +11,8 @@ class ApplicationDocument extends Model
         "document_id",
         "path",
     ];
+
+    public function application(){
+        return $this->belongsTo(Application::class);
+    }
 }

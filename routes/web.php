@@ -18,10 +18,6 @@ Route::get('/', function () {
     return view('web.home');
 });
 
-Route::get('/payment', [PaymentController::class, 'index']);
-Route::post('/payment/request', [PaymentController::class, 'paymentRequest']);
-Route::post('/payment/response', [PaymentController::class, 'paymentResponse']);
-
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('optimize:clear');
     // return what you want
@@ -120,11 +116,6 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     Route::post('/admin/admission_notice/update',[AdmissionNoticeController::class,'update']);
     Route::post('/admin/admission_notice/delete',[AdmissionNoticeController::class,'delete']);
 
-
-
-
-
-
     Route::get('/admin/application', function () {
         return view('admin.application');
     })->name('admin-application');
@@ -136,5 +127,10 @@ Route::middleware(['auth', 'student', 'verified'])->group(function () {
         return view('student.dashboard');
     })->name('student-dashboard');
 });
+
+Route::get('/payment', [PaymentController::class, 'index']);
+Route::post('/payment/request', [PaymentController::class, 'paymentRequest']);
+Route::post('/payment/response', [PaymentController::class, 'paymentResponse']);
+Route::get('/payment/status/{id}', [PaymentController::class, 'status']);
 
 require __DIR__.'/auth.php';
