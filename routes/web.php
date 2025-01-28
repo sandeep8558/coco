@@ -71,10 +71,16 @@ Route::get('/dashboard', function () {
     }
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/payment', [PaymentController::class, 'index']);
+Route::post('/payment/request', [PaymentController::class, 'paymentRequest']);
+Route::post('/payment/response', [PaymentController::class, 'paymentResponse']);
+Route::get('/payment/status/{id}', [PaymentController::class, 'status']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 
 Route::middleware(['auth', 'admin', 'verified'])->group(function () {
@@ -124,13 +130,9 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
 
 Route::middleware(['auth', 'student', 'verified'])->group(function () {
     Route::get('/student/dashboard', function () {
-        return view('student.dashboard');
+        $applications = Auth::user()->applications;
+        return view('student.dashboard', compact('applications'));
     })->name('student-dashboard');
 });
-
-Route::get('/payment', [PaymentController::class, 'index']);
-Route::post('/payment/request', [PaymentController::class, 'paymentRequest']);
-Route::post('/payment/response', [PaymentController::class, 'paymentResponse']);
-Route::get('/payment/status/{id}', [PaymentController::class, 'status']);
 
 require __DIR__.'/auth.php';

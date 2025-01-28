@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
 
+            $table->bigInteger('user_id')->index();
             $table->bigInteger('grade_id')->index();
             $table->set('admission_for', ['New', 'Re-admission'])->default('New');
             $table->string('surname');

@@ -29,6 +29,7 @@ class PaymentController extends Controller
         $application_id = null;
 
         $application_data = [
+            "user_id" => Auth::user()->id,
             "grade_id" => $session_data["grade_id"],
             "admission_for" => $session_data["admission_for"],
             "surname" => $session_data["surname"],
@@ -186,7 +187,7 @@ class PaymentController extends Controller
         $input['billing_name'] = "Sandeep Rathod";
         $input['billing_address'] = $application->address;
         $input['billing_city'] = $application->city;
-        $input['billing_state'] = $application->billing_state;
+        $input['billing_state'] = $application->state;
         $input['billing_zip'] = $application->pincode;
         $input['billing_country'] = $application->country;
         $input['billing_tel'] = $application->primary_contact_number;

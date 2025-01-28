@@ -5,5 +5,11 @@
 @endsection
 
 @section('content')
-<h1>Student</h1>
+<div class="container">
+
+    <h1>Student</h1>
+
+    {{ $applications }}
+
+</div>
 @endsection

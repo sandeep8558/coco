@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     protected $fillable = [
+        "user_id",
         "grade_id",
         "admission_for",
         "surname",
@@ -33,7 +34,14 @@ class Application extends Model
         "pincode",
         "no_of_brothers",
         "no_of_sisters",
+        "tracking_id",
+        "bank_ref_no",
+        "order_status",
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 
     public function grade(){
         return $this->belongsTo(Grade::class);
