@@ -427,6 +427,21 @@
            
       
     </div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-3">
+    
+                <div class="image image-cover image-hd">
+                    <div class="image-overlay bg-primary opacity-50"></div>
+                    <img src="/img/shape.jpg" alt="...">
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
    
 
 @endsection

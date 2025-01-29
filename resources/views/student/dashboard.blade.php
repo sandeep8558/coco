@@ -11,5 +11,15 @@
 
     {{ $applications }}
 
+    <br><br><br><br>
+
+    @foreach($applications as $appli)
+    {{$appli->surname}}
+    @endforeach
+
+    <div>
+        
+    </div>
+
 </div>
 @endsection
