@@ -1,25 +1,26 @@
-<div>
-    <div class="row">
-        <div class="col-12 col-xl-12">
+<div class="mb-5">
+    <div class="row bg-light py-3 shadow g-4">
+        <h3>Contact Details:</h3>
+        <div class="col-12 col-xl-8">
             <div class="form-floating">
                 <input type="text" class="form-control" id="address" name="address" value="{{ request()->address }}">
                 <label for="address">Address</label>
             </div>
             @if($errors->get('address'))
             @foreach($errors->get('address') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
 
-        <div class="col-12 col-xl-3">
+        <div class="col-12 col-xl-4">
             <div class="form-floating">
                 <input type="text" class="form-control" id="city" name="city" value="{{ request()->city }}">
                 <label for="city">City</label>
             </div>
             @if($errors->get('city'))
             @foreach($errors->get('city') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -31,7 +32,7 @@
             </div>
             @if($errors->get('state'))
             @foreach($errors->get('state') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -43,7 +44,7 @@
             </div>
             @if($errors->get('country'))
             @foreach($errors->get('country') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -55,7 +56,7 @@
             </div>
             @if($errors->get('pincode'))
             @foreach($errors->get('pincode') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -67,7 +68,7 @@
             </div>
             @if($errors->get('primary_contact_number'))
             @foreach($errors->get('primary_contact_number') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>

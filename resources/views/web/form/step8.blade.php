@@ -1,6 +1,6 @@
-<div>
-    <div class="row g-4 mb-5">
-
+<div class="mb-5">
+    <div class="row bg-light py-3 shadow g-4">
+        <h3>Sibling Details:</h3>
         <div class="col-12 col-xl-6">
             <div class="form-floating">
                 <input type="number" class="form-control" id="no_of_brothers" name="no_of_brothers" value="{{ request()->no_of_brothers }}">
@@ -8,7 +8,7 @@
             </div>
             @if($errors->get('no_of_brothers'))
             @foreach($errors->get('no_of_brothers') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -20,7 +20,7 @@
             </div>
             @if($errors->get('no_of_sisters'))
             @foreach($errors->get('no_of_sisters') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>

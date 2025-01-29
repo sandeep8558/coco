@@ -1,5 +1,5 @@
-<div>
-    <div class="row g-3 bg-light py-3">
+<div class="mb-5">
+    <div class="row g-4 bg-light shadow py-3">
         
         <div class="col-12">
             <label for="admission_for">I need admission for my ward</label>
@@ -11,7 +11,7 @@
 
             @if($errors->get('admission_for'))
             @foreach($errors->get('admission_for') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -27,7 +27,7 @@
 
             @if($errors->get('grade_id'))
             @foreach($errors->get('grade_id') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>

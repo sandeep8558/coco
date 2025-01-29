@@ -1,6 +1,6 @@
-<div>
-    <div class="row g-4 mb-5">
-
+<div class="mb-5">
+    <div class="row bg-light py-3 shadow g-4">
+    <h3>Guardian Details:</h3>
         <div class="col-12 col-xl-3">
             <div class="form-floating">
                 <input type="text" class="form-control" id="guardiansname" name="guardiansname" value="{{ request()->guardiansname }}">
@@ -8,7 +8,7 @@
             </div>
             @if($errors->get('guardiansname'))
             @foreach($errors->get('guardiansname') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -20,7 +20,7 @@
             </div>
             @if($errors->get('guardiansage'))
             @foreach($errors->get('guardiansage') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -32,7 +32,7 @@
             </div>
             @if($errors->get('guardiansnationality'))
             @foreach($errors->get('guardiansnationality') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -44,7 +44,7 @@
             </div>
             @if($errors->get('guardiansreligion'))
             @foreach($errors->get('guardiansreligion') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -56,7 +56,7 @@
             </div>
             @if($errors->get('guardiansqualification'))
             @foreach($errors->get('guardiansqualification') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -68,7 +68,7 @@
             </div>
             @if($errors->get('guardiansschool_name'))
             @foreach($errors->get('guardiansschool_name') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -80,7 +80,7 @@
             </div>
             @if($errors->get('guardianscollege_name'))
             @foreach($errors->get('guardianscollege_name') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
@@ -92,31 +92,31 @@
             </div>
             @if($errors->get('guardiansprofession'))
             @foreach($errors->get('guardiansprofession') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
 
-        <div class="col-12 col-xl-3">
+        <div class="col-12 col-xl-8">
             <div class="form-floating">
                 <input type="text" class="form-control" id="guardiansoffice_address" name="guardiansoffice_address" value="{{ request()->guardiansoffice_address }}">
                 <label for="guardiansoffice_address">Office Address</label>
             </div>
             @if($errors->get('guardiansoffice_address'))
             @foreach($errors->get('guardiansoffice_address') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>
 
-        <div class="col-12 col-xl-3">
+        <div class="col-12 col-xl-4">
             <div class="form-floating">
                 <input type="text" class="form-control" id="guardianscontact_number" name="guardianscontact_number" value="{{ request()->guardianscontact_number }}">
                 <label for="guardianscontact_number">Contact Number</label>
             </div>
             @if($errors->get('guardianscontact_number'))
             @foreach($errors->get('guardianscontact_number') as $err)
-            {{ $err }}
+            <p class="text-danger">{{ $err }}</p>
             @endforeach
             @endif
         </div>

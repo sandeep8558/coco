@@ -1,6 +1,6 @@
-<div>
-    <div class="row g-3">
-
+<div  class="mb-5">
+    <div class="row g-3 bg-light py-3 shadow">
+    <h3>Parents/Guardian Details:</h3>
     <div class="col-12">
 
         <label for="">I am Parent/Guardian</label>
@@ -17,7 +17,7 @@
 
         @if($errors->get('parentguardian'))
         @foreach($errors->get('parentguardian') as $err)
-        {{ $err }}
+        <p class="text-danger">{{ $err }}</p>
         @endforeach
         @endif
 
