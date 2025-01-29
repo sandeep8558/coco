@@ -6,8 +6,8 @@
 
 @section('content')
     
-    <div class="container py-4">
-        <h1>Online Application Form</h1>
+    <div class="container py-5">
+        <h1 class="m-0">Online Application Form</h1>
     </div>
 
     @if(!Auth::check())
@@ -121,7 +121,7 @@
                 }
             ?>
             @if($step < 12)
-            <a class="btn btn-voilet" href="/online_application/{{$id}}?step={{ $prev }}">Previous {{$step-1}}</a>
+            <a class="btn btn-voilet" href="/online_application/{{$id}}?step={{ $prev }}">Previous</a>
             @endif
             @endif
 
@@ -134,7 +134,7 @@
         
 
         @if($step == 12)
-            <a class="btn btn-voilet" href="/online_application/{{$id}}?step={{ $prev }}">Previous {{$step-1}}</a>
+            <a class="btn btn-voilet" href="/online_application/{{$id}}?step={{ $prev }}">Previous</a>
             @include('web.form.payment')
         @endif
 

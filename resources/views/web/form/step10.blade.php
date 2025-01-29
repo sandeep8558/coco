@@ -17,8 +17,8 @@
         @foreach($docs as $i => $doc)
         <div class="col-12 mt-5">
             <h4>{{ $doc->document->document }}  </h4>  
-            <input type="file" class="hidden" name="docs[]" id="doc_{{ $doc->document_id }}" value="">
-            <input type="text" name="document_id[]" id="document_id_{{ $doc->document_id }}" value="{{ $doc->document_id }}">
+            <input type="file" name="docs[]" id="doc_{{ $doc->document_id }}" value="">
+            <input type="hidden" name="document_id[]" id="document_id_{{ $doc->document_id }}" value="{{ $doc->document_id }}">
         </div>
         @endforeach
 

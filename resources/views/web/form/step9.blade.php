@@ -11,7 +11,7 @@
         
         <div class="col-12 col-xl-3">
             <div class="form-floating">
-                <input type="text" class="form-control" id="name" name="brothername[]" value="{{ request()->brothername ? request()->brothername[$i] : '' }}">
+                <input type="text" class="form-control" id="name" name="brothername[]" value="{{ request()->brothername ? session()->get('brothername')[$i] : '' }}">
                 <label for="name">Name</label>
             </div>
         </div>
