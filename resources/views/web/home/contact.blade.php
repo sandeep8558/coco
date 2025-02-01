@@ -22,23 +22,12 @@
 </div>
 
 
-<!-- content -->
-<!-- <div id="contact" class="container py-1 py-md-5 py-xl-8">
-    <div class="row justify-content-md-center border">
-      <div class="col-12 col-md-10 col-lg-8 col-xl-7">
-        <h2 class="mb-4 display-5 text-center">Need Help</h2>
-        <p class="text-secondary mb-5 text-center lead fs-4">Our team is available to provide prompt and helpful responses to all inquiries. You can reach us via phone, email, or by filling out the contact form below.</p>
-        <hr class="w-50 mx-auto mb-1 mb-xl-9 border-dark-subtle">
-      </div>
-    </div>
-</div> -->
-
-<div id="contact" class="container py-5">
+<div id="contact" class="container py-5 mb-5">
   <div  class="row">
     <div class="col">
         <h2 class="mb-4 display-5 text-center">Need Help?</h2>
         <p class="text-secondary mb-5 text-center lead fs-4">Our team is available to provide prompt and helpful responses to all inquiries. You can reach us via phone, email, or by filling out the contact form below.</p>
-        <hr class="w-50 mx-auto mb-1 mb-xl-9 border-dark-subtle">
+        <hr class="w-50 mx-auto mb-1 border-dark-subtle">
     </div>
   </div>
 </div>

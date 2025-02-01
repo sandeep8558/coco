@@ -19,7 +19,7 @@
             {{$err}}
             @endforeach
             @endif
-            <input type="submit" class="btn btn-primary" value="Save Document">
+            <input type="submit" class="btn btn-primary mt-3" value="Save Document">
         </div>
         
     </form>

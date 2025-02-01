@@ -1,6 +1,17 @@
 <div class="mb-5">
     <div class="row g-4 bg-light shadow py-3">
-        
+        <div class="col-12">
+            <p class="">Documents required to apply online are as follows. Keep the scanned copy of it ready.</p>
+            <ul>
+                @if(isset($docs))
+                @foreach($docs as $i => $doc)
+                <li>
+                    {{ $doc->document->document }} 
+                </li>
+                @endforeach
+                @endif
+            </ul>
+        </div>
         <div class="col-12">
             <label for="admission_for">I need admission for my ward</label>
             <select class="form-select" id="admission_for" name="admission_for">

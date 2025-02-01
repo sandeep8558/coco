@@ -41,6 +41,10 @@
                   <h5>Tracking ID :{{$appli->tracking_id}} </h5>
                   <h5>Bank Reference Number :{{$appli->bank_ref_no}} </h5>
                   <h5>Application Status :{{$appli->order_status}} </h5>
+                  @if($appli->order_status!='Success')
+                  <a href="http://127.0.0.1:8000/online_application/1?step=12" class="btn btn-primary">Complete payment</a>
+                  @endif
+                  
                   
                  
                 </div>

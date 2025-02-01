@@ -6,72 +6,75 @@
 
 @section('content')
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid bg-dark">
+        <div class="container text-light">
+                <h4>Grades</h4>
+        </div>
+    </div> -->
+
+   
         @if(!isset($grade))
-        <div class="row">
-            <div class="col-12">
-                <h4 class="fw-bold">Grades Manager</h4>
-            </div>
-            <div class="col-12">
-                <form action="/admin/grades/save" method="post">
-                    @csrf
-                    <div class="form-floating">
-                        <input type="text" class="form-control" name="grade" id="grade">
-                        <label for="grade">Enter Grade</label> 
-                        @if($errors->get('grade'))
-                        @foreach($errors->get('grade') as $err)
-                        {{ $err }}
-                        @endforeach
-                        @endif
-                        <input type="submit" class="btn btn-primary mt-3" value="Save Grade">
-                    </div>        
-                </form>
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="fw-bold">Grades Manager</h4>
+                </div>
+                <div class="col-12">
+                    <form action="/admin/grades/save" method="post">
+                        @csrf
+                        <div class="form-floating">
+                            <input type="text" class="form-control" name="grade" id="grade">
+                            <label for="grade">Enter Grade</label> 
+                            @if($errors->get('grade'))
+                                @foreach($errors->get('grade') as $err)
+                                {{ $err }}
+                                @endforeach
+                            @endif
+                            <input type="submit" class="btn btn-primary mt-3" value="Save Grade">
+                        </div>        
+                    </form>
+                </div>
             </div>
         </div>
         @endif
-    </div>
-   
- 
 
-<div class="container-fluid">
-    @if(isset($grade))
-    <div class="row">
-        <div class="col-12">
-            <h4 class="fw-bold">Grades Manager</h4>
-        </div>
-        <div class="col-12">
+   
+    <div class="container-fluid mt-3">
+        <div class="row">
+            @if(isset($grade))
+            <div class="col-12 d-flex"> 
             <form action="/admin/grades/update" method="post">
-                @csrf
-                <input type="hidden" name="id" id="id" value="{{ $grade->id }}">    
+            @csrf
+                <input type="hidden" name="id" id="id" value="{{ $grade->id }}">  
                 <input type="text" name="grade" id="grade" value="{{ $grade->grade }}">
                 @if($errors->get('grade'))
                 @foreach($errors->get('grade') as $err)
                 {{ $err }}
                 @endforeach
                 @endif
-                <input type="submit" class="btn btn-primary mt-5" value="Update Grade">
-            </form>
+                <input type="submit" class="btn btn-primary mt-5" value="Update Grade"> 
+            
+            </form> 
+        </div>
+           
 
             <form action="/admin/grades/delete" method="post">
                 @csrf
                 <input type="hidden" name="id" id="id" value="{{ $grade->id }}">
                 <input type="text" name="grade" id="grade" value="{{ $grade->grade }}">
                 @if($errors->get('grade'))
-                @foreach($errors->get('grade') as $err)
-                {{ $err }}
-                @endforeach
+                    @foreach($errors->get('grade') as $err)
+                    {{ $err }}
+                    @endforeach
                 @endif
                 <input type="submit" class="btn btn-primary mt-5" value="Delete Grade">
             </form>
-        </div>
-       
+        
+        @endif
     </div>
-    @endif
-</div>
 
-
-    <div class="p-3">
-        <table class="table table-dark">
+<div class="p-3">
+    <table class="table table-light table-stripped">
         <thead>
             <tr>
                 <th scope="col" class="" style="width:80px;">#</th>
@@ -88,12 +91,13 @@
             </tr>
             @endforeach
         </tbody>
-        </table>
+    </table>
 
-        @if($grades)
-        {{ $grades->links() }}
-        @endif
-    </div>
-
+    @if($grades)
+    {{ $grades->links() }}
+    @endif
 </div>
+
+
+
 @endsection

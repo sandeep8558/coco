@@ -8,15 +8,16 @@
 
 <h1>Academic Year</h1>
 @if(!isset($academicyear))
-<div>
+<div class="container-fluid">
     <form action="/admin/academic_year/save" method="post">
-        @csrf
-        <input type="text" name="title" id="title">
-        @if($errors->get('title'))
-        @foreach($errors->get('title') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
+    @csrf
+    <input type="text" name="title" id="title">
+    @if($errors->get('title'))
+    @foreach($errors->get('title') as $err)
+    {{ $err }}
+    @endforeach
+    @endif
+    
         <input type="text" name="alias" id="alias">
         @if($errors->get('alias'))
         @foreach($errors->get('alias') as $err)

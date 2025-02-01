@@ -1,7 +1,7 @@
 <!-- Footer -->
 
 <div class="container-fluid text-bg-tertiary mt-5 py-3">
-    <div class="container text-center text-md-start mt-5">
+    <div class="container-fluid text-center text-md-start mt-5">
         <div class="row mt-3">
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <h6 class="text-uppercase fw-bold mb-4">
@@ -16,10 +16,10 @@
                 Useful links
                 </h6>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-decoration-none text-secondary">Home</a></li>
-                    <li><a href="#" class="text-decoration-none text-secondary">About</a></li>
-                    <li><a href="#" class="text-decoration-none text-secondary">Gallery</a></li>
-                    <li><a href="#" class="text-decoration-none text-secondary">Admission</a></li>
+                    <li><a href="/" class="text-decoration-none text-secondary">Home</a></li>
+                    <li><a href="/about" class="text-decoration-none text-secondary">About</a></li>
+                    <li><a href="/gallery" class="text-decoration-none text-secondary">Gallery</a></li>
+                    <li><a href="/admission" class="text-decoration-none text-secondary">Admission</a></li> 
                 </ul>       
             </div>
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
