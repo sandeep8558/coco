@@ -15,7 +15,7 @@ class PaymentController extends Controller
 
     public function __construct(){
         $this->merchantID = "4094602";
-        $this->AccessCode = "ATNI48MA81BX62INXB";
+        $this->AccessCode = "AVNI48MA81BX62INXB";
         $this->WorkingKey = "2E41E11BF34B3B562B2DBD21D2CEE791";
     }
 
