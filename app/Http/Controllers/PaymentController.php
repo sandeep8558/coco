@@ -30,6 +30,7 @@ class PaymentController extends Controller
 
         $application_data = [
             "user_id" => Auth::user()->id,
+            "admission_notice_id" => $session_data["admission_notice_id"],
             "grade_id" => $session_data["grade_id"],
             "admission_for" => $session_data["admission_for"],
             "surname" => $session_data["surname"],
@@ -58,7 +59,15 @@ class PaymentController extends Controller
             "no_of_sisters" => $session_data["no_of_sisters"],
         ];
 
-        $application = Application::create($application_data);
+        if(session()->has("application_id")){
+            $application = Application::find($session_data["application_id"]);
+            $application->application_parents()->delete();
+            $application->application_siblings()->delete();
+            $application->application_documents()->delete();
+            $application->update($application_data);
+        } else {
+            $application = Application::create($application_data);
+        }
 
         $application_id = $application->id;
 
@@ -170,10 +179,13 @@ class PaymentController extends Controller
 
     }
 
-    public function paymentRequest(Request $request)
-    {
+    public function paymentRequest(Request $request){
 
         $application = $this->saveOrder();
+
+        $user = Auth::user();
+        $request->session()->flush();
+        Auth::login($user);
 
         $input = $request->all();
 

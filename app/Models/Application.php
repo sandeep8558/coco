@@ -37,6 +37,7 @@ class Application extends Model
         "tracking_id",
         "bank_ref_no",
         "order_status",
+        "admission_notice_id",
     ];
 
     public function user(){

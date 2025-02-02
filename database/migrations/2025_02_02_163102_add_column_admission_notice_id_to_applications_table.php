@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->set('role', ['Administrator', 'Student'])->default('Student');
-            $table->set('status', ['Active', 'Deactivated', 'Blocked', 'Hold', 'Discontinued'])->default('Active');
+        Schema::table('applications', function (Blueprint $table) {
+            $table->bigInteger('admission_notice_id')->index();
         });
     }
 
@@ -22,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['role', 'status']);
+        Schema::table('applications', function (Blueprint $table) {
+            $table->dropColumn('admission_notice_id');
         });
     }
 };

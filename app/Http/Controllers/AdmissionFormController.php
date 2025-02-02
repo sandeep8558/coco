@@ -3,17 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 use App\Models\AdmissionNotice;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
 use App\Models\GradeWiseDocument;
-use Illuminate\Support\Facades\Storage;
+use App\Models\Application;
 use Auth;
 
 class AdmissionFormController extends Controller
 {
 
     public function index($id, Request $request){
+
+        if(session()->has('id')){
+            session(["application_id" => session("id")]);
+            session()->forget('id');
+        }
+
+        session(["admission_notice_id" => $id]);
 
         if(!Auth::check()){
             session(['form_path' => url()->current()]);
@@ -36,6 +45,140 @@ class AdmissionFormController extends Controller
        
 
         return view('web.online_application', compact('step', 'path', 'admission_notice', 'docs', 'id'));
+    }
+
+    public function edit($id){
+        $application = Application::find($id);
+        session($application->toArray());
+
+        $father = null;
+        $mother = null;
+        $guardian = null;
+
+        foreach($application->application_parents as $par){
+
+            if($par->relation == "Father"){
+                $father = [
+                    'fathersname' => $par->name,
+                    'fathersage' => $par->age,
+                    'fathersnationality' => $par->nationality,
+                    'fathersreligion' => $par->religion,
+                    'fathersqualification' => $par->qualification,
+                    'fathersschool_name' => $par->school_name,
+                    'fatherscollege_name' => $par->college_name,
+                    'fathersprofession' => $par->profession,
+                    'fathersoffice_address' => $par->office_address,
+                    'fatherscontact_number' => $par->contact_number,
+                ];
+
+                session($father);
+            }
+
+            if($par->relation == "Mother"){
+                $mother = [
+                    'mothersname' => $par->name,
+                    'mothersage' => $par->age,
+                    'mothersnationality' => $par->nationality,
+                    'mothersreligion' => $par->religion,
+                    'mothersqualification' => $par->qualification,
+                    'mothersschool_name' => $par->school_name,
+                    'motherscollege_name' => $par->college_name,
+                    'mothersprofession' => $par->profession,
+                    'mothersoffice_address' => $par->office_address,
+                    'motherscontact_number' => $par->contact_number,
+                ];
+                session($mother);
+            }
+
+            if($par->relation == "Guardian"){
+                $guardian = [
+                    'guardiansname' => $par->name,
+                    'guardiansage' => $par->age,
+                    'guardiansnationality' => $par->nationality,
+                    'guardiansreligion' => $par->religion,
+                    'guardiansqualification' => $par->qualification,
+                    'guardiansschool_name' => $par->school_name,
+                    'guardianscollege_name' => $par->college_name,
+                    'guardiansprofession' => $par->profession,
+                    'guardiansoffice_address' => $par->office_address,
+                    'guardianscontact_number' => $par->contact_number,
+                ];
+                session($guardian);
+            }
+
+        }
+
+        if($guardian != null){
+            session(["parentguardian" => "guardian"]);
+        } else {
+            session(["parentguardian" => "parent"]);
+            if($mother != null && $father != null){
+                session(["singleparent" => "No"]);
+            } else {
+                session(["singleparent" => "Yes"]);
+
+                if($mother != null){
+                    session(["singlewho" => "Mother"]);
+                }
+                if($father != null){
+                    session(["singlewho" => "Father"]);
+                }
+            }
+        }
+
+
+        $brothername = [];
+        $brotherage = [];
+        $brotherschool_college = [];
+        $brothergrade = [];
+        $sistername = [];
+        $sisterage = [];
+        $sisterschool_college = [];
+        $sistergrade = [];
+
+        foreach($application->application_siblings as $sib){
+
+            if($sib->relation == "Brother"){
+                $brothername[] = $sib->name;
+                $brotherage[] = $sib->age;
+                $brotherschool_college[] = $sib->school_college;
+                $brothergrade[] = $sib->grade;
+            }
+
+            if($sib->relation == "Sister"){
+                $sistername[] = $sib->name;
+                $sisterage[] = $sib->age;
+                $sisterschool_college[] = $sib->school_college;
+                $sistergrade[] = $sib->grade;
+            }
+
+        }
+
+        session([
+            "brothername" => $brothername,
+            "brotherage" => $brotherage,
+            "brotherschool_college" => $brotherschool_college,
+            "brothergrade" => $brothergrade,
+            "sistername" => $sistername,
+            "sisterage" => $sisterage,
+            "sisterschool_college" => $sisterschool_college,
+            "sistergrade" => $sistergrade,
+        ]);
+
+        $path = [];
+        $document_id = [];
+        foreach($application->application_documents as $doccc){
+            $path[] = $doccc->path;
+            $document_id[] = $doccc->document_id;
+        }
+
+        session([
+            "paths" => $path,
+            "document_id" => $document_id
+        ]);
+
+        $admission_notice_id = $application->admission_notice_id;
+        return redirect("/online_application/".$admission_notice_id);
     }
 
     public function save($id, Request $request){
@@ -71,6 +214,9 @@ class AdmissionFormController extends Controller
         }
 
         if($step == 5){
+
+            $this->deleteAllParents($request);
+
             $step4Validator = $this->validateStep4($request);
             if ($step4Validator->fails()){
                 return redirect($path."?step=4")->withErrors($step4Validator)->withInput();
@@ -88,6 +234,9 @@ class AdmissionFormController extends Controller
         }
 
         if($step == 6){
+
+            $this->deleteAllParents($request);
+
             $step5Validator = $this->validateStep5($request);
 
             if((session('parentguardian') == 'parent' && session('singleparent') == 'No')){
@@ -108,8 +257,10 @@ class AdmissionFormController extends Controller
         }
 
         if($step == 7){
-            $step6Validator = $this->validateStep6($request);
 
+            $this->deleteAllParents($request);
+
+            $step6Validator = $this->validateStep6($request);
 
             if((session('parentguardian') == 'parent' && session('singleparent') == 'No')){
                 if ($step6Validator->fails()){
@@ -145,7 +296,7 @@ class AdmissionFormController extends Controller
 
         if($step == 9){
 
-            //return $request;
+            $this->deleteSiblings($request);
 
             $step8Validator = $this->validateStep8($request);
             if ($step8Validator->fails()){
@@ -856,7 +1007,95 @@ class AdmissionFormController extends Controller
             }
         }
 
-        
+    }
+
+    private function deleteAllParents(Request $request){
+
+        $is = false;
+
+        if(session()->has('parentguardian')){
+            if(session('parentguardian') != $request->parentguardian){
+                $is = true;
+            }
+        }
+
+        if(session()->has('singleparent')){
+            if(session('singleparent') != $request->singleparent){
+                $is = true;
+            }
+        }
+
+        if(session()->has('singlewho')){
+            if(session('singlewho') != $request->singlewho){
+                $is = true;
+            }
+        }
+
+        if($is){
+            session()->forget([
+                'guardiansname',
+                'guardiansage',
+                'guardiansnationality',
+                'guardiansreligion',
+                'guardiansqualification',
+                'guardiansschool_name',
+                'guardianscollege_name',
+                'guardiansprofession',
+                'guardiansoffice_address',
+                'guardianscontact_number',
+                'fathersname',
+                'fathersage',
+                'fathersnationality',
+                'fathersreligion',
+                'fathersqualification',
+                'fathersschool_name',
+                'fatherscollege_name',
+                'fathersprofession',
+                'fathersoffice_address',
+                'fatherscontact_number',
+                'mothersname',
+                'mothersage',
+                'mothersnationality',
+                'mothersreligion',
+                'mothersqualification',
+                'mothersschool_name',
+                'motherscollege_name',
+                'mothersprofession',
+                'mothersoffice_address',
+                'motherscontact_number'
+            ]);
+        }
+
+    }
+
+    private function deleteSiblings(Request $request){
+
+        $is = false;
+
+        if(session()->has('no_of_brothers')){
+            if(session('no_of_brothers') != $request->no_of_brothers){
+                $is = true;
+            }
+        }
+
+        if(session()->has('no_of_sisters')){
+            if(session('no_of_sisters') != $request->no_of_sisters){
+                $is = true;
+            }
+        }
+
+        if($is){
+            session()->forget([
+                'brothername',
+                'brotherage',
+                'brotherschool_college',
+                'brothergrade',
+                'sistername',
+                'sisterage',
+                'sisterschool_college',
+                'sistergrade',
+            ]);
+        }
 
     }
 

@@ -30,12 +30,9 @@ Route::get('/admission', function () {
     return view('web.admission', compact('admission_notices'));
 });
 
-Route::get('/online_application/{id}', function ($id) {
-    return view('web.online_application');
-});
-
 Route::get('/online_application/{id}', [AdmissionFormController::class, 'index']);
 Route::post('/online_application/{id}/save', [AdmissionFormController::class, 'save']);
+Route::get('/online_application/edit/application/{id}', [AdmissionFormController::class, 'edit']);
 
 Route::get('/about', function () {
     return view('web.home.about');
