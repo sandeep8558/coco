@@ -9,6 +9,7 @@ use App\Http\Controllers\GradeWiseDocumentController;
 use App\Http\Controllers\AdmissionFormController;
 use App\Http\Controllers\StorageController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ApplicationController;
 use App\Models\AdmissionNotice;
 use Illuminate\Support\Facades\Route;
 
@@ -122,9 +123,14 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     Route::post('/admin/admission_notice/update',[AdmissionNoticeController::class,'update']);
     Route::post('/admin/admission_notice/delete',[AdmissionNoticeController::class,'delete']);
 
-    Route::get('/admin/application', function () {
-        return view('admin.application');
-    })->name('admin-application');
+    // Route::get('/admin/application', function () {
+    //     return view('admin.application');
+    // })->name('admin-application');
+    Route::get('/admin/application',[ApplicationController::class,'index']);
+    Route::post('/admin/application/save',[ApplicationController::class,'save']);
+    Route::post('/admin/application/update',[ApplicationController::class,'update']);
+    Route::post('/admin/application/delete',[ApplicationController::class,'delete']);
+
 
 });
 
