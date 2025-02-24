@@ -212,7 +212,7 @@ class PaymentController extends Controller
         }
 
         $encrypted_data = $this->encryptCC($merchant_data, $this->WorkingKey);
-        $url = 'https://test.ccavenue.com/transaction/transaction.do?command=initiateTransaction&encRequest=' . $encrypted_data . '&access_code=' . $this->AccessCode;
+        $url = 'https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction&encRequest=' . $encrypted_data . '&access_code=' . $this->AccessCode;
 
         return redirect($url);
     }
