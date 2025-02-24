@@ -8,38 +8,66 @@
 
 <h1>Academic Year</h1>
 @if(!isset($academicyear))
-<div class="container-fluid">
+<div>
     <form action="/admin/academic_year/save" method="post">
     @csrf
-    <input type="text" name="title" id="title">
-    @if($errors->get('title'))
-    @foreach($errors->get('title') as $err)
-    {{ $err }}
-    @endforeach
-    @endif
-    
-        <input type="text" name="alias" id="alias">
-        @if($errors->get('alias'))
-        @foreach($errors->get('alias') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
-        <input type="date" name="from" id="from">
-        @if($errors->get('from'))
-        @foreach($errors->get('from') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
-        <input type="date" name="to" id="to">
-        @if($errors->get('to'))
-        @foreach($errors->get('to') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
-        <input type="submit" class="btn btn-primary" value="Save Academic Year">
-       
+        <div class="row p-3 g-4">
+            
+            <div class="col-6 mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="AY Title" name="title" id="title">
+                    <label for="title">Enter Academic Year Title</label>   
+                </div>
+                @if($errors->get('title'))
+                @foreach($errors->get('title') as $err)
+                {{ $err }}
+                @endforeach
+                @endif
+            </div>
+            
+            <div class="col-6 mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="AY Alias Name" name="alias" id="alias">
+                    <label for="alias">Enter Academic Year Alias</label>   
+                </div>
+                @if($errors->get('alias'))
+                @foreach($errors->get('alias') as $err)
+                {{ $err }}
+                @endforeach
+                @endif
+            </div>
 
- </form>
+            <div class="col-6 mb-3">
+                <div class="form-floating">
+                    <input type="date" class="form-control" placeholder="AY Start Date" name="from" id="from">
+                    <label for="from">AY Start Date</label>   
+                </div>
+                @if($errors->get('from'))
+                @foreach($errors->get('from') as $err)
+                {{ $err }}
+                @endforeach
+                @endif
+            </div>
+
+            <div class="col-6 mb-3">
+                <div class="form-floating">
+                    <input type="date" class="form-control" placeholder="AY End Date" name="to" id="to">
+                    <label for="to">AY End Date</label>   
+                </div>
+                @if($errors->get('to'))
+                @foreach($errors->get('to') as $err)
+                {{ $err }}
+                @endforeach
+                @endif
+            </div>
+        
+            <div class="col-6">
+                <input type="submit" class="btn btn-primary" value="Save Academic Year">
+            </div>
+
+            
+        </div>
+    </form>
 </div>
 @endif
 

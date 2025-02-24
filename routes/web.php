@@ -128,6 +128,7 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     Route::post('/admin/application/update',[ApplicationController::class,'update']);
     Route::post('/admin/application/delete',[ApplicationController::class,'delete']);
 
+  
 
 });
 
