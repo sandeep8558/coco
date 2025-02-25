@@ -8,7 +8,8 @@
                   Coco School
                 </h6>
                 <p>
-                  56RC+2MW, Dattanagar, Ambernath, Badlapur, Maharashtra 421505
+                  Sarvodaya Nagar, Jambhul Phata, Ambernath West, Thane 421505
+                 
                 </p>
             </div>
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -24,9 +25,9 @@
             </div>
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                <p class="m-0 mb-1"> <i class="fa fa-solid fa-envelope fa-lg"></i> info@example.com </p>
-                <p class="m-0 mb-1"> <i class="fa fa-solid fa-phone fa-lg"></i> +91 0123456788</p>
-                <p class="m-0 mb-1"> <i class="fa fa-solid fa-phone fa-lg"></i> +91 0123456788</p>
+                <p class="m-0 mb-1"> <i class="fa fa-solid fa-envelope fa-lg"></i> sarvodayavidyalayschool@gmail.com </p>
+                <p class="m-0 mb-1"> <i class="fa fa-solid fa-phone fa-lg"></i> +91 7378791995</p>
+                <!-- <p class="m-0 mb-1"> <i class="fa fa-solid fa-phone fa-lg"></i> +91 0123456788</p> -->
             </div>
           </div>
         </div>

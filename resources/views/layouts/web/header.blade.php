@@ -3,11 +3,11 @@
   <div class="containder-fluid py-1 ms-auto text-bg-secondary">  
       <div class="container">
           <i class="bi bi-telephone-fill me-3">
-            <span class="ms-1">8785964587</span>
+            <span class="ms-1">7378791995</span>
           </i>
 
           <i class="bi bi-envelope-fill me-3">
-            <span class="ms-1">abc.com</span>
+            <span class="ms-1">sarvodayavidyalayschool@gmail.com</span>
           </i>
       </div>
   </div>

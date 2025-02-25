@@ -30,7 +30,7 @@
                         <hr class="w-50 mx-auto">
                     </div>
                     <p class="description-p text-muted pe-0 pe-lg-0">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quas optio reiciendis deleniti voluptatem facere sequi, quia, est sed dicta aliquid quidem facilis culpa iure perferendis? Dolor ad quia deserunt.
+                    We offer three well-structured programs — Nursery, Junior KG, and Senior KG designed to nurture young minds at every stage of early childhood learning. Each program focuses on age-appropriate activities, fostering cognitive, social, and emotional growth in a fun and engaging environment.
                     </p>
             </div>
         </div>
@@ -47,7 +47,7 @@
 
             <div class="col-lg-4 pb-4 bg-light shadow">
                 <h3 class="mt-4">Junior KG</h3>
-                <p class="mb-3">Age Limit - 0 to 3 Years </p>
+                <p class="mb-3">Age Limit - 4 to 5 Years </p>
                 <p class="m-0"><i class="bi bi-check2-circle"></i>Photoshoot duration</p>
                 <p class="m-0"><i class="bi bi-check2-circle"></i>Number photo</p>
                 <p class="m-0"><i class="bi bi-check2-circle"></i>Consultation duration</p>
@@ -56,7 +56,7 @@
 
             <div class="col-lg-4 pb-4 bg-light shadow">
                 <h3 class="mt-4">Senior KG</h3>
-                <p class="mb-3">Age Limit - 0 to 3 Years </p>
+                <p class="mb-3">Age Limit - 5 to 6 Years </p>
                 <p class="m-0"><i class="bi bi-check2-circle"></i>Photoshoot duration</p>
                 <p class="m-0"><i class="bi bi-check2-circle"></i>Number photo</p>
                 <p class="m-0"><i class="bi bi-check2-circle"></i>Consultation duration</p>

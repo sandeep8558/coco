@@ -155,13 +155,14 @@
             <div class="container">
                 <div class="row justify-content-center gapsectionsecond">
                     <div class="col-lg-7 text-center">
-                            <div class="pb-1 mb-1">
-                                <h3>Gallery</h3>
-                                <hr class="w-50 mx-auto">
-                            </div>
-                            <p class="description-p text-muted pe-0 pe-lg-0">
+                        <div class="pb-1 mb-1">
+                            <h3 class="fs-1 fw-bolder text-voilet">Gallery</h3>
+                            <hr class="w-50 mx-auto">
+                        </div>
+                            
+                            <!-- <p class="description-p text-muted pe-0 pe-lg-0">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quas optio reiciendis deleniti voluptatem facere sequi, quia, est sed dicta aliquid quidem facilis culpa iure perferendis? Dolor ad quia deserunt.
-                            </p>
+                            </p> -->
                     </div>
                 </div>
 

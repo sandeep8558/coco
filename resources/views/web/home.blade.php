@@ -21,7 +21,7 @@
                 
                 <div class="position-absolute bg-light p-2 z-1 shadow text-center rounded">
                 <div class="bg-warning p-4 rounded">
-                    <h5 class="m-0 fw-bold text-dark">25 Years</h5>
+                    <h5 class="m-0 fw-bold text-dark">15 Years</h5>
                     <p class="m-0 fw-bold text-dark">Experience</p>
                 </div>
                 </div>
@@ -50,7 +50,12 @@
 
                     <tr>
                     <td colspan="3">
-                        <p class="mb-3 text-justify">We at <b>Coco Preschool</b> There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on onable. the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasThe generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                        <p class="mb-3 text-justify">We, the <b>Sarvodaya Vidyalaya </b>, are here to give you a different flower that will blossom from their own tiny seeds. We are eagerly anticipating the arrival of more seeds that can be molded into their own fragrance.
+                        Our journey began from the basement of two rooms to the double-storied building.
+                        The journey began somewhere between 2007 and 2008. We were only having pre-primary and primary sections.
+                        Today, in the year 2025, we have surpassed all limits and made a significant change. We are optimistic that we will accomplish more.
+                        Mr. Praful Shah, our trustee, and Mr. Prabhu Das, have been instrumental in helping us achieve this to date.
+</p>
                     </td>
                     </tr>
 
@@ -115,7 +120,7 @@
                                 <hr class="w-50 mx-auto">
                             </div>
                             <p class="description-p text-muted pe-0 pe-lg-0">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quas optio reiciendis deleniti voluptatem facere sequi, quia, est sed dicta aliquid quidem facilis culpa iure perferendis? Dolor ad quia deserunt.
+                            Our preschool offers bright, spacious classrooms, a secure outdoor play area, and a well-stocked learning center to encourage creativity and exploration.
                             </p>
                     </div>
                 </div>
@@ -229,7 +234,7 @@
                             <hr class="w-50 mx-auto">
                         </div>
                         <p class="description-p text-muted pe-0 pe-lg-0">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quas optio reiciendis deleniti voluptatem facere sequi, quia, est sed dicta aliquid quidem facilis culpa iure perferendis? Dolor ad quia deserunt.
+                        We offer three well-structured programs — Nursery, Junior KG, and Senior KG designed to nurture young minds at every stage of early childhood learning.
                         </p>
                 </div>
             </div>
@@ -246,7 +251,7 @@
 
                 <div class="col-lg-4 pb-4 bg-light shadow">
                     <h3 class="mt-4">Junior KG</h3>
-                    <p class="mb-3">Age Limit - 0 to 3 Years </p>
+                    <p class="mb-3">Age Limit - 4 to 5 Years </p>
                     <p class="m-0"><i class="bi bi-check2-circle"></i>Photoshoot duration</p>
                     <p class="m-0"><i class="bi bi-check2-circle"></i>Number photo</p>
                     <p class="m-0"><i class="bi bi-check2-circle"></i>Consultation duration</p>
@@ -255,7 +260,7 @@
 
                 <div class="col-lg-4 pb-4 bg-light shadow">
                     <h3 class="mt-4">Senior KG</h3>
-                    <p class="mb-3">Age Limit - 0 to 3 Years </p>
+                    <p class="mb-3">Age Limit - 5 to 6 Years </p>
                     <p class="m-0"><i class="bi bi-check2-circle"></i>Photoshoot duration</p>
                     <p class="m-0"><i class="bi bi-check2-circle"></i>Number photo</p>
                     <p class="m-0"><i class="bi bi-check2-circle"></i>Consultation duration</p>
@@ -276,10 +281,10 @@
                             <h3>Gallery</h3>
                             <hr class="w-50 mx-auto">
                         </div>
-                        <p class="description-p text-muted pe-0 pe-lg-0">
+                        <!-- <p class="description-p text-muted pe-0 pe-lg-0">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quas optio reiciendis deleniti voluptatem facere sequi, quia, est sed dicta aliquid quidem facilis culpa iure perferendis? Dolor ad quia deserunt.
                         </p>
-                </div>
+                </div> -->
             </div>
 
                 <!-- <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="false">

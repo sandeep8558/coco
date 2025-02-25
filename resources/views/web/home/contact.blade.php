@@ -45,7 +45,7 @@
                   <div class="col-11 col-xl-10">
                     <div class="contact-info-wrapper py-4 py-xl-5">
                       <h2 class="h1 mb-3 text-light">Get in touch</h2>
-                      <p class="lead fs-4 text-light opacity-75 mb-4 mb-xxl-5">We're always on the lookout to work with new clients. If you're interested in working with us, please get in touch in one of the following ways.</p>
+                      <p class="lead fs-4 text-light opacity-75 mb-4 mb-xxl-5">We invite you to visit Coco School and see firsthand how we create a joyful and nurturing environment for young learners. Schedule a tour today and embark on a wonderful learning journey with us!</p>
                       <div class="d-flex mb-4 mb-xxl-5">
                         <div class="me-4 text-primary">
                         <h4><i class="bi bi-geo-alt-fill"></i></h4>
@@ -53,7 +53,7 @@
                         </div>
                         <div>
                           <h4 class="mb-3 text-light">Address</h4>
-                          <address class="mb-0 text-light opacity-75">Dattanagar, Ambernath, Badlapur, Maharashtra 421505</address>
+                          <address class="mb-0 text-light opacity-75">Sarvodaya Nagar, Jambhul Phata, Ambernath West, Thane 421505</address>
                         </div>
                       </div>
                       <div class="row mb-4 mb-xxl-5">
@@ -65,7 +65,7 @@
                             <div>
                               <h4 class="mb-3 text-light">Phone</h4>
                               <p class="mb-0">
-                                <a class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none" href="tel:+15057922430">+91 8888888888</a>
+                                <a class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none" href="tel:+15057922430">+91 7378791995</a>
                               </p>
                             </div>
                           </div>
@@ -78,7 +78,7 @@
                             <div>
                               <h4 class="mb-3 text-light">E-Mail</h4>
                               <p class="mb-0">
-                                <a class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none" href="mailto:demo@yourdomain.com">demo@yourdomain.com</a>
+                                <a class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none" href="mailto:demo@yourdomain.com">sarvodayavidyalayschool@gmail.com</a>
                               </p>
                             </div>
                           </div>
@@ -91,12 +91,12 @@
                         <div>
                           <h4 class="mb-3 text-light">Opening Hours</h4>
                           <div class="d-flex mb-1">
-                            <p class="text-light fw-bold mb-0 me-5">Mon - Fri</p>
-                            <p class="text-light opacity-75 mb-0">9am - 5pm</p>
+                            <p class="text-light fw-bold mb-0 me-5">Mon - Sat</p>
+                            <p class="text-light opacity-75 mb-0">7am - 6pm</p>
                           </div>
                           <div class="d-flex">
-                            <p class="text-light fw-bold mb-0 me-5">Sat - Sun</p>
-                            <p class="text-light opacity-75 mb-0">9am - 2pm</p>
+                            <p class="text-light mb-0 me-5">2nd & 4th Sataurday office willl be closed</p>
+                            <!-- <p class="text-light opacity-75 mb-0">9am - 2pm</p> -->
                           </div>
                         </div>
                       </div>
