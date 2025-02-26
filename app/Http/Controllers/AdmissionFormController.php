@@ -42,8 +42,6 @@ class AdmissionFormController extends Controller
             $docs = GradeWiseDocument::where('grade_id', $grade_id)->get();
         }
 
-       
-
         return view('web.online_application', compact('step', 'path', 'admission_notice', 'docs', 'id'));
     }
 
@@ -223,19 +221,22 @@ class AdmissionFormController extends Controller
             }
 
             if((session('parentguardian') == 'parent' && session('singleparent') == 'No')){
+                session(['singlewho' => '']);
                 return redirect($path."?step=5");
             } else if((session('parentguardian') == 'parent' && session('singleparent') == 'Yes' && session('singlewho') == 'Mother')){
                 return redirect($path."?step=5");
             } else if((session('parentguardian') == 'parent' && session('singleparent') == 'Yes' && session('singlewho') == 'Father')){
                 return redirect($path."?step=6");
             } else if(session('parentguardian') == 'guardian') {
+                session(['singlewho' => '']);
+                session(['singleparent' => '']);
                 return redirect($path."?step=7");
             }
         }
 
         if($step == 6){
 
-            $this->deleteAllParents($request);
+            //$this->deleteAllParents($request);
 
             $step5Validator = $this->validateStep5($request);
 
@@ -258,7 +259,7 @@ class AdmissionFormController extends Controller
 
         if($step == 7){
 
-            $this->deleteAllParents($request);
+            //$this->deleteAllParents($request);
 
             $step6Validator = $this->validateStep6($request);
 
@@ -688,14 +689,14 @@ class AdmissionFormController extends Controller
             if($request->has('singleparent')) {
                 $request->singleparent = session('singleparent');
             } else {
-                $request->merge(['singleparent' => session('parentguardian') == 'parent' ? session('singleparent') : '']);
+                $request->merge(['singleparent' => (session('parentguardian') == 'parent' ? session('singleparent') : '')]);
             }
         }
         if($request->session()->exists('singlewho')){ 
             if($request->has('singlewho')) {
                 $request->singlewho = session('singlewho');
             } else {
-                $request->merge(['singlewho' => session('parentguardian') == 'parent' ? session('singlewho') : '']);
+                $request->merge(['singlewho' => (session('parentguardian') == 'parent' ? session('singlewho') : '')]);
             }
         }
 
@@ -1009,7 +1010,7 @@ class AdmissionFormController extends Controller
 
     }
 
-    private function deleteAllParents(Request $request){
+    private function deleteAllParents(Request $request){ 
 
         $is = false;
 

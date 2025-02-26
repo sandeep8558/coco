@@ -20,7 +20,10 @@
                     <li><a href="/" class="text-decoration-none text-secondary">Home</a></li>
                     <li><a href="/about" class="text-decoration-none text-secondary">About</a></li>
                     <li><a href="/gallery" class="text-decoration-none text-secondary">Gallery</a></li>
-                    <li><a href="/admission" class="text-decoration-none text-secondary">Admission</a></li> 
+                    <li><a href="/admission" class="text-decoration-none text-secondary">Admission</a></li>
+                    <li><a href="/terms_and_conditions" class="text-decoration-none text-secondary">Terms & Conditions</a></li>
+                    <li><a href="/privacy_policy" class="text-decoration-none text-secondary">Privacy Policy</a></li>
+                    <li><a href="/return_cancellation_policy" class="text-decoration-none text-secondary">Refund & Cancellation Policy</a></li>
                 </ul>       
             </div>
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">

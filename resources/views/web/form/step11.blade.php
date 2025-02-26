@@ -88,7 +88,7 @@
         <h5>* I am {{session('parentguardian')}}</h5>
         <!-- <h5>* Single Parent? {{session('singleparent')}}</h5>   -->
         
-        @if(session('parentguardian')=='Parent')
+        @if(session('parentguardian')=='parent')
         <h5 class="fw-bold mt-3 mb-3">Mother's Details:</h5>
 
         <div class="col-12 col-md-6">

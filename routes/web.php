@@ -58,6 +58,17 @@ Route::get('/contact', function () {
     return view('web.home.contact');
 })->name('contact');
 
+Route::get('/terms_and_conditions', function () {
+    return view('web.home.terms_and_conditions');
+})->name('terms_and_conditions');
+
+Route::get('/privacy_policy', function () {
+    return view('web.home.privacy_policy');
+})->name('privacy_policy');
+
+Route::get('/return_cancellation_policy', function () {
+    return view('web.home.return_cancellation_policy');
+})->name('return_cancellation_policy');
 
 Route::get('/dashboard', function () {
     if(Auth::user()->role == "Administrator"){
