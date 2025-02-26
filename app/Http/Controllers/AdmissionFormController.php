@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\GradeWiseDocument;
 use App\Models\Application;
 use Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdmissionFormController extends Controller
 {
@@ -177,6 +178,18 @@ class AdmissionFormController extends Controller
 
         $admission_notice_id = $application->admission_notice_id;
         return redirect("/online_application/".$admission_notice_id);
+    }
+
+    public function download($id){
+        return view('web.online_application_download');
+    }
+
+    public function demo($id){
+        $data = [
+            "name" => "Sandeep Rathod"
+        ];
+        $pdf = Pdf::loadView('web.demo', $data);
+        return $pdf->stream('demo.pdf');
     }
 
     public function save($id, Request $request){

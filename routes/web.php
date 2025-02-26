@@ -33,6 +33,9 @@ Route::get('/admission', function () {
 Route::get('/online_application/{id}', [AdmissionFormController::class, 'index']);
 Route::post('/online_application/{id}/save', [AdmissionFormController::class, 'save']);
 Route::get('/online_application/edit/application/{id}', [AdmissionFormController::class, 'edit']);
+Route::get('/online_application/download/application/{id}', [AdmissionFormController::class, 'download']);
+
+Route::get('/online_application/demo/application/{id}', [AdmissionFormController::class, 'demo']);
 
 Route::get('/about', function () {
     return view('web.home.about');

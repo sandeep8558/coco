@@ -46,6 +46,12 @@
                         Edit & Complete payment
                     </a>
                     @endif
+
+                    @if($appli->order_status=='Success')
+                    <a href="/online_application/download/application/{{$appli->id}}" class="btn btn-primary">
+                        Download Form
+                    </a>
+                    @endif
                     
                   
                  
