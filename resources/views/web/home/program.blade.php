@@ -12,12 +12,12 @@
 
 <!-- Header image -->
 <div class="container-fluid p-0 position-relative" data-aos="fade" data-aos-duration="1000">
-  <div class="row m-0 justify-content-center align-items-center text-center bg-dark w-100 position-absolute z-1 h-100 opacity-75">
+  <div class="row m-0 justify-content-center align-items-center text-center w-100 position-absolute z-1 h-100">
     <div class="col">
-        <h1 class="text-light opacity-100 display-3 fw-bold" data-aos="flip-left">Our Program</h1>
+        <!-- <h1 class="text-light opacity-100 display-3 fw-bold" data-aos="flip-left">Our Program</h1> -->
     </div>
   </div>
-  <img src="/img/one.jpg" alt="contact_us" class="w-100" data-aos-delay="1000" data-aos-duration="3000">
+  <img src="/img/coco_program1.png" alt="contact_us" class="w-100" data-aos-delay="1000" data-aos-duration="3000">
 </div>
 
 <!-- Program -->

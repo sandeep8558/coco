@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
 use App\Models\GradeWiseDocument;
 use App\Models\Application;
+use App\Models\ApplicationSibling;
 use Auth;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -185,9 +186,12 @@ class AdmissionFormController extends Controller
     }
 
     public function demo($id){
+        $application=Application::find($id);
+        // $appsib=ApplicationSibling::find($application->id);
         $data = [
-            "name" => "Sandeep Rathod"
+            "application"=>$application      
         ];
+        // return $data;
         $pdf = Pdf::loadView('web.demo', $data);
         return $pdf->stream('demo.pdf');
     }
