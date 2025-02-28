@@ -119,7 +119,16 @@
     <tr>
         <td>
            
-            No of Brothers : {{$application->no_of_brothers}}    
+            No of Brothers : {{$application->no_of_brothers}}  
+            <!-- @if({{$application->no_of_brothers}}>0)   -->
+                <tr><td>Brother's Details</td></tr>
+                @foreach($application->sibling as $sib)
+                <tr><td>Name: {{$sib->name}}</td></tr>
+
+
+                @endforeach
+
+            <!-- @endif -->
         </td>
         <td>
             No of Sisters : {{$application->no_of_sisters}}    
@@ -144,39 +153,169 @@
            Application Status : {{$application->order_status}}    
         </td>
         <td>
-          Admission Notice : {{$application->admission_notice_id}}    
-        </td>
-    </tr>
-    <tr>
-        <td>
-        @foreach($application->application_parents as $par)
-
-            @if($par->relation == "Father")
-                $father = [
-                    'fathersname' => $par->name,
-                    'fathersage' => $par->age,
-                    'fathersnationality' => $par->nationality,
-                    'fathersreligion' => $par->religion,
-                    'fathersqualification' => $par->qualification,
-                    'fathersschool_name' => $par->school_name,
-                    'fatherscollege_name' => $par->college_name,
-                    'fathersprofession' => $par->profession,
-                    'fathersoffice_address' => $par->office_address,
-                    'fatherscontact_number' => $par->contact_number,
-                ];
-
-                session($father);
-            @endif
-        @endforeach
+          Admission Notice : {{$application->admission_notice_id}}   
         </td>
         
     </tr>
-
-  
     </table>
 
 
+   <!-- <table>
+        <tr>
+            <td>
+                Parents Details:
+            </td>   
+        </tr>
+    </table> -->
+
+    @foreach($application->application_parents as $par)
+    <table>
+        
+        @if($par->relation=='Mother')
+        <tr>
+            <td>
+                    Mother's Name: {{$par->name}}
+            </td>
+            <td>
+                   Age: {{$par->age}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    Nationality: {{$par->nationality}}
+            </td>
+            <td>
+                   Religion: {{$par->religion}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    Qualification: {{$par->qualification}}
+            </td>
+            <td>
+                    School name: {{$par->school_name}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    College name: {{$par->college_name}}
+            </td>
+            <td>
+                    Profession: {{$par->profession}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   Office address: {{$par->office_address}}
+            </td>
+            <td>
+                  Contact number: {{$par->contact_number}}
+            </td>
+        </tr>
+        @endif
+    </table>
+    @endforeach
+
+    @foreach($application->application_parents as $par)
+    <table>
+        @if($par->relation=='Father')
+        <tr>
+            <td>
+                 Father's Name: {{$par->name}}
+            </td>
+            <td>
+                 Age: {{$par->age}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   Nationality: {{$par->nationality}}
+            </td>
+            <td>
+                    Religion: {{$par->religion}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    Qualification: {{$par->qualification}}
+            </td>
+            <td>
+                   School_name: {{$par->school_name}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    College_name: {{$par->college_name}}
+            </td>
+            <td>
+                    Profession: {{$par->profession}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    Office_address: {{$par->office_address}}
+            </td>
+            <td>
+                    Contact_number: {{$par->contact_number}}
+            </td>
+        </tr>
+
+        @endif
+
+    </table>
+    @endforeach
+
+    @foreach($application->application_parents as $par)
+    <table>
+        @if($par->relation=='Guardian')
+        <tr>
+            <td>
+                Guardian's Name: {{$par->name}}
+            </td>
+            <td>
+                 Age: {{$par->age}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                   Nationality: {{$par->nationality}}
+            </td>
+            <td>
+                    Religion: {{$par->religion}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    Qualification: {{$par->qualification}}
+            </td>
+            <td>
+                   School_name: {{$par->school_name}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    College_name: {{$par->college_name}}
+            </td>
+            <td>
+                    Profession: {{$par->profession}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                    Office_address: {{$par->office_address}}
+            </td>
+            <td>
+                    Contact_number: {{$par->contact_number}}
+            </td>
+        </tr>
+
+        @endif
+
+    </table>
+    @endforeach
+    
+
+    
+  
 </body>
 </html>
-
-birth_city
