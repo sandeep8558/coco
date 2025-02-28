@@ -48,6 +48,10 @@ class Application extends Model
         return $this->belongsTo(Grade::class);
     }
 
+    public function application_notice(){
+        return $this->belongsTo(AdmissionNotice::class);
+    }
+
     public function application_documents(){
         return $this->hasMany(ApplicationDocument::class);
     }
@@ -58,5 +62,17 @@ class Application extends Model
 
     public function application_siblings(){
         return $this->hasMany(ApplicationSibling::class);
+    }
+
+    protected $appends = ['photo'];
+
+    public function getPhotoAttribute(){
+        $photo = null;
+        foreach($this->application_documents as $doc){
+            if($doc->document_id == 3){
+                $photo = $doc->path;
+            }
+        }
+        return $photo;
     }
 }

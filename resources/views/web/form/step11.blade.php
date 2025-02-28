@@ -17,7 +17,7 @@
     </div>
 
     <div class="row">
-       <h4>My ward wants {{session('admission_for')}} admission for grade {{session('grade_id')}}. </h4> 
+       <h4>My ward wants {{session('admission_for')}} admission for grade {{ App\Models\Grade::find(session('grade_id'))->grade }}.</h4>
         <h3 class="fw-bold mt-5 mb-3">Personal Details:</h3>
         <div class="col-12">
             <p class="fs-5"><span class="fw-bold">Student Full Name : </span><span>

@@ -48,7 +48,7 @@
                     @endif
 
                     @if($appli->order_status=='Success')
-                    <a href="/online_application/download/application/{{$appli->id}}" class="btn btn-primary">
+                    <a href="/online_application/download/application/{{$appli->id}}" target="__blank" class="btn btn-primary">
                         Download Form
                     </a>
                     @endif

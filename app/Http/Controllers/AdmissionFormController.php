@@ -182,18 +182,17 @@ class AdmissionFormController extends Controller
     }
 
     public function download($id){
-        return view('web.online_application_download');
+        return $this->demo($id);
+        //return view('web.online_application_download');
     }
 
     public function demo($id){
         $application=Application::find($id);
-        // $appsib=ApplicationSibling::find($application->id);
         $data = [
             "application"=>$application      
         ];
-        // return $data;
         $pdf = Pdf::loadView('web.demo', $data);
-        return $pdf->stream('demo.pdf');
+        return $pdf->stream('coco_school_application_'.$id.'.pdf');
     }
 
     public function save($id, Request $request){
