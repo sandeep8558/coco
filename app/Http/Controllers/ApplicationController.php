@@ -7,6 +7,7 @@ use App\Http\Requests\ApplicationRequest;
 use App\Models\Application;
 use App\Models\User;
 use App\Models\Grade;
+use App\Models\AdmissionNotice;
 
 
 
@@ -19,6 +20,7 @@ class ApplicationController extends Controller
         if(isset($application))
         {
             $application=Application::find($request->id);
+           
           
         }
         $applications=Application::simplepaginate(10);

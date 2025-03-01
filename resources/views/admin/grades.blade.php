@@ -13,30 +13,30 @@
     </div> -->
 
    
-        @if(!isset($grade))
-        <div class="container-fluid mt-3">
-            <div class="row">
-                <div class="col-12">
-                    <h4 class="fw-bold">Grades Manager</h4>
-                </div>
-                <div class="col-12">
-                    <form action="/admin/grades/save" method="post">
-                        @csrf
-                        <div class="form-floating">
-                            <input type="text" class="form-control" name="grade" id="grade">
-                            <label for="grade">Enter Grade</label> 
-                            @if($errors->get('grade'))
-                                @foreach($errors->get('grade') as $err)
-                                {{ $err }}
-                                @endforeach
-                            @endif
-                            <input type="submit" class="btn btn-primary mt-3" value="Save Grade">
-                        </div>        
-                    </form>
-                </div>
+    @if(!isset($grade))
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="fw-bold">Grades Manager</h4>
+            </div>
+            <div class="col-12">
+                <form action="/admin/grades/save" method="post">
+                    @csrf
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="grade" id="grade">
+                        <label for="grade">Enter Grade</label> 
+                        @if($errors->get('grade'))
+                            @foreach($errors->get('grade') as $err)
+                            {{ $err }}
+                            @endforeach
+                        @endif
+                        <input type="submit" class="btn btn-primary mt-3" value="Save Grade">
+                    </div>        
+                </form>
             </div>
         </div>
-        @endif
+    </div>
+    @endif
 
    
     <div class="container-fluid mt-3">

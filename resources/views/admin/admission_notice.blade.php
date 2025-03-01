@@ -10,58 +10,95 @@
 @if(!isset($admission_notice))
 <div>
     <form action="/admin/admission_notice/save" method="post">
-        @csrf
-        <input type="text" name="notification_title" id="notification_title">
-        @if($errors->get('notification_title'))
-        @foreach($errors->get('notification_title') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
-        <select name="academic_year_id" id="academic_year_id">
-            <option value="">Select Academic Year</option>
-            @if(isset($academic_years))
-                @foreach($academic_years as $acdyear)
-                <option value="{{$acdyear->id}}">
-                    {{$acdyear->title}}
-                </option>
+    @csrf
+        <div class="row p-3 g-4">
+            <div class="col-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" name="notification_title" id="notification_title" >
+                    <label for="notification_title">Enter Admission Notification Title</label>
+                </div>  
+                    @if($errors->get('notification_title'))
+                    @foreach($errors->get('notification_title') as $err)
+                    {{ $err }}
+                    @endforeach
+                    @endif
+        
+            </div>
+
+            <div class="col-6">
+                <div class="form-floating">
+                    <select name="academic_year_id" class="form-control" id="academic_year_id">
+                            <option value="">Select Academic Year</option>
+                            @if(isset($academic_years))
+                                @foreach($academic_years as $acdyear)
+                                <option value="{{$acdyear->id}}">
+                                    {{$acdyear->title}}
+                                </option>
+                                @endforeach
+                        @endif
+                    </select> 
+                </div>
+                    @if($errors->get('academic_year_id'))
+                    @foreach($errors->get('academic_year_id') as $err)
+                    {{ $err }}
+                    @endforeach
+                    @endif
+            </div>
+
+            <div class="col-6">
+                <div class="form-floating">
+                    <input type="date" class="form-control" name="start_date" id="start_date">
+                    <label for="start_date">Admission Start Date</label>
+                        @if($errors->get('start_date'))
+                            @foreach($errors->get('start_date') as $err)
+                            {{ $err }}
+                            @endforeach
+                        @endif
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-floating">
+                    <input type="date" class="form-control" name="end_date" id="end_date">
+                    <label for="end_date">Admission End Date</label>
+                        @if($errors->get('end_date'))
+                            @foreach($errors->get('end_date') as $err)
+                            {{ $err }}
+                            @endforeach
+                        @endif
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-floating">
+                    <input type="number" class="form-control" name="application_fee" id="application_fee">
+                    <label for="application_fee">Application Fee</label>
+                        @if($errors->get('application_fee'))
+                            @foreach($errors->get('application_fee') as $err)
+                            {{ $err }}
+                            @endforeach
+                        @endif
+                </div>
+            </div>
+
+
+            <div class="col-6">
+                @foreach($grades as $gr)
+                    <div class="pb-2">
+                        <input type="checkbox"  name="grade_id[]" id="grade_id_{{$gr->id}}" value="{{$gr->id}}">
+                        <label  for="grade_id_{{$gr->id}}"> {{$gr->grade}} </label>
+                        <input  type="text" name="seats[]" id="seats" placeholder="Available No of seats">
+                    </div> 
                 @endforeach
-        @endif
-        </select>
-        
-        @if($errors->get('academic_year_id'))
-        @foreach($errors->get('academic_year_id') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
-        <input type="date" name="start_date" id="start_date">
-        @if($errors->get('start_date'))
-        @foreach($errors->get('start_date') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
-        <input type="date" name="end_date" id="end_date">
-        @if($errors->get('end_date'))
-        @foreach($errors->get('end_date') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
-        <input type="number" name="application_fee" id="application_fee">
-        @if($errors->get('application_fee'))
-        @foreach($errors->get('application_fee') as $err)
-        {{ $err }}
-        @endforeach
-        @endif
-        <br>
-        @foreach($grades as $gr)
-        <div>
-          <input type="checkbox" name="grade_id[]" id="grade_id_{{$gr->id}}" value="{{$gr->id}}">
-          <label for="grade_id_{{$gr->id}}"> {{$gr->grade}} </label>
-          <input type="text" name="seats[]" id="seats">
+                <br>
+            </div>
+
+            <div class="col-12">
+                <input type="submit" class="btn btn-primary" value="Save Admission Notice">
+            </div>
+
         </div>
-        @endforeach
-        <br>
-        
-        <input type="submit" class="btn btn-primary" value="Save Admission Notice">
+    
     </form>
 </div>
 @endif
@@ -161,7 +198,7 @@
 </div>
 @endif
 
-<div>
+<div class="mt-3">
     <table class="table">
       <thead>
         <tr>

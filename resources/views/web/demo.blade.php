@@ -193,11 +193,13 @@ td, th {
 
     <!-- @foreach($application->application_documents as $doc)
     @if($doc->document_id != 3)
-    <div class="page-break"></div>
+    <div class="page-break">
+          <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/storage/'.$doc->path))) }}" class="w-50">
+    </div>
     <table>
         <tr>
             <td>
-                <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/storage/'.$doc->path))) }}" class="w-50">
+              
             </td>
         </tr>
     </table>

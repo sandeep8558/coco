@@ -54,7 +54,7 @@
     <!-- Content -->
     <div id="sidebar_content" class="sidebar-content sidebar-content-open">
         
-        <button id="sidebar-toggle">Open Close</button>
+        <button id="sidebar-toggle"><i class="bi bi-list"></i></button>
 
         @yield('content')
 
