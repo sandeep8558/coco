@@ -21,6 +21,7 @@ class AdmissionNotice extends Model
     public function applications(){
         return $this->hasMany(Application::class);
     }
+    
     public function academic_year(){
         return $this->belongsTo(AcademicYear::class);
     }

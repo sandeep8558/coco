@@ -138,6 +138,7 @@ Route::middleware(['auth', 'admin', 'verified'])->group(function () {
     //     return view('admin.application');
     // })->name('admin-application');
     Route::get('/admin/application',[ApplicationController::class,'index']);
+    Route::get('/admin/notice/{id}/applications',[ApplicationController::class,'applications']);
     Route::post('/admin/application/save',[ApplicationController::class,'save']);
     Route::post('/admin/application/update',[ApplicationController::class,'update']);
     Route::post('/admin/application/delete',[ApplicationController::class,'delete']);

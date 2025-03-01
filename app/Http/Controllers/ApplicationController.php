@@ -9,25 +9,17 @@ use App\Models\User;
 use App\Models\Grade;
 use App\Models\AdmissionNotice;
 
-
-
-
 class ApplicationController extends Controller
 {
     public function index(Request $request)
     {
-        $application=null;
-        if(isset($application))
-        {
-            $application=Application::find($request->id);
-           
-          
-        }
-        $applications=Application::simplepaginate(10);
-        // $user=User::get();
-        // $grade=Grade::get();
-       // return $applications;
-        return view('admin.application', compact('applications', 'application'));
+        $admission_notices = AdmissionNotice::orderBy('id', 'desc')->get();
+        return view('admin.application', compact('admission_notices'));
+    }
+
+    public function applications($id){
+        $notice = AdmissionNotice::find($id);
+        return view('admin.applications', compact('notice'));
     }
 
     public function save(ApplicationRequest $request)
