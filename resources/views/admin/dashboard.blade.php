@@ -12,7 +12,7 @@
         <div class="col-6">
             <div class="shadow rounded-3 p-4"> 
             <h1>
-                {{$count = \DB::table('Applications')->where('order_status','=','Success')->count();}}
+                {{$count = \DB::table('applications')->where('order_status','=','Success')->count();}}
                 </h1>
                 <h5>Total Applications</h5>
             </div>
@@ -20,7 +20,7 @@
         <div class="col-6">
             <div class="shadow rounded-3 p-4">
                 <h1> {{
-                    $Admission_Notice = DB::table('Applications')
+                    $Admission_Notice = DB::table('applications')
                     ->groupBy('admission_notice_id')
                     ->count();
                }}  </h1>
