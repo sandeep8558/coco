@@ -7,12 +7,12 @@
 @section('content')
 <h1>Application</h1>
 
-<div class="">
+<div class="row p-3 gy-3">
 
     @foreach($admission_notices as $notice)
-    <div class="container-fluid">
-        <div class="card shadow-sm px-2">
-            <div class="card-header">{{ $notice->notification_title }}</div>
+    <div class="col-12 col-lg-6">
+        <div class="card shadow">
+            <div class="card-header bg-dark text-light fw-bold">{{ $notice->notification_title }}</div>
             <div class="card-body">
                 <p>{{ $notice->academic_year->title }} ({{ $notice->academic_year->alias }})</p>
                 <p>Online Application Date: {{ $notice->start_date }} to {{ $notice->end_date }}</p>

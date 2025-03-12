@@ -4,21 +4,18 @@
 <title>Grades</title>
 @endsection
 
+@section('pageheader')
+<h1>Grades Manager</h1>
+@endsection
+
 @section('content')
-
-    <!-- <div class="container-fluid bg-dark">
-        <div class="container text-light">
-                <h4>Grades</h4>
-        </div>
-    </div> -->
-
    
     @if(!isset($grade))
     <div class="container-fluid mt-3">
         <div class="row">
-            <div class="col-12">
+            <!-- <div class="col-12">
                 <h4 class="fw-bold">Grades Manager</h4>
-            </div>
+            </div> -->
             <div class="col-12">
                 <form action="/admin/grades/save" method="post">
                     @csrf

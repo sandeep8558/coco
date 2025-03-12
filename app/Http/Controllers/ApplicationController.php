@@ -21,7 +21,10 @@ class ApplicationController extends Controller
         $notice = AdmissionNotice::find($id);
         return view('admin.applications', compact('notice'));
     }
-
+    public function viewapplication($id){
+        $app = Application::find($id);
+        return view('admin.viewapplication', compact('app'));
+    }
     public function save(ApplicationRequest $request)
     {
         Application::create($request->all());

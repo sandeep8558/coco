@@ -142,8 +142,8 @@
         @foreach($grade_wise_documents as $grwisedoc)
         <tr>
             <th scope="row">{{ $grwisedoc->id }}</th>
-            <td>{{ $grwisedoc->grade_id }}</td>
-            <td>{{ $grwisedoc->document_id }}</td>
+            <td>{{ $grwisedoc->grade->grade }}</td>
+            <td>{{ $grwisedoc->document->document }}</td>
             <td><a href="/admin/grade_wise_documents?id={{$grwisedoc->id}}">Edit / Delete</a></td>
         </tr>
         @endforeach

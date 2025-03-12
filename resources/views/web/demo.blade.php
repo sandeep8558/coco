@@ -68,7 +68,9 @@ td, th {
         <tr>
             <td class="">Full Name : {{$application->students_name}}   {{$application->fathers_name}}  {{$application->surname}}  {{$application->mothers_name}}</td>
             <td class="w-20" rowspan="7">
-                <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/storage/'.$application->photo))) }}" class="w-100">
+                
+
+
             </td>
         </tr>
         <tr><td>Date of Birth : {{$application->date_of_birth}}</td></tr>
@@ -194,7 +196,10 @@ td, th {
     <!-- @foreach($application->application_documents as $doc)
     @if($doc->document_id != 3)
     <div class="page-break">
-          <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('/storage/'.$doc->path))) }}" class="w-50">
+         
+
+
+    
     </div>
     <table>
         <tr>

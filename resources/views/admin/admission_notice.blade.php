@@ -216,10 +216,10 @@
         <tr>
             <th scope="row">{{ $adnotice->id }}</th>
             <td>{{ $adnotice->notification_title }}</td>
-            <td>{{ $adnotice->academic_year_id }}</td>
+            <td>{{ $adnotice->academic_year->alias }}</td>
             <td>{{ $adnotice->start_date }}</td>
             <td>{{ $adnotice->end_date }}</td>
-            <td>{{ $adnotice->application_fee }}</td>
+            <td>{{ $adnotice->application_fee }}/-</td>
 
             <td><a href="/admin/admission_notice?id={{$adnotice->id}}">Edit / Delete</a></td>
         </tr>
